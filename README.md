@@ -1,6 +1,6 @@
 # 🌐 Portafolio de Angélica Bengelsdorff
 
-![Vista previa del sitio](./public/preview.png)
+(./public/vistapreviaportafolio.jpg)
 
 Este es mi portafolio personal como desarrolladora web Full Stack. Lo desarrollé con foco en la accesibilidad, el diseño moderno, el rendimiento y una experiencia de usuario atractiva y profesional.
 
@@ -40,8 +40,7 @@ Desarrollado por [Angélica Bengelsdorff](https://www.linkedin.com/in/angelica-b
 
 ## 🔗 En línea
 
-📌 [Ver sitio desplegado](https://tu-url-en-vercel.vercel.app)  
-_(Reemplazá esto con tu link real cuando lo subas a Vercel)_
+📌 [Ver sitio desplegado](https://portafolio-bengelsdorff.vercel.app/)  
 
 ---
 
