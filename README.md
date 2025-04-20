@@ -1,6 +1,7 @@
 # 🌐 Portafolio de Angélica Bengelsdorff
 
-(./public/vistapreviaportafolio.jpg)
+![Vista previa del portafolio](./vistapreviaportafolio.jpg)
+
 
 Este es mi portafolio personal como desarrolladora web Full Stack. Lo desarrollé con foco en la accesibilidad, el diseño moderno, el rendimiento y una experiencia de usuario atractiva y profesional.
 
