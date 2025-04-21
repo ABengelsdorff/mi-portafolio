@@ -17,6 +17,7 @@ import {
 import { Physics } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import Band from "./band";
+import Image from "next/image";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/assets/3d/card.glb");
@@ -31,6 +32,48 @@ export default function Hero() {
       <SplashCursor />
 
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center z-10">
+
+
+
+
+{/* IMAGEN DE PERFIL - SOLO EN MOBILE */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="flex justify-center md:hidden"
+>
+  <div className="relative w-60 h-60 sm:w-48 sm:h-48">
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-primary to-purple-400 rounded-full opacity-70 blur-2xl"
+      animate={{ scale: [1, 1.05, 1] }}
+      transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+    />
+    <motion.div
+      className="relative w-full h-full bg-white dark:bg-gray-900 rounded-full overflow-hidden border-2 border-primary/20"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
+    >
+      <Image
+        src="/yo.jpg"
+        alt="Tu foto de perfil"
+        fill
+        className="w-full h-full object-cover"
+      />
+    </motion.div>
+  </div>
+</motion.div>
+
+
+
+
+
+
+
+
+
+
+
         {/* TEXTO - IZQUIERDA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
