@@ -37,8 +37,7 @@ export default function Footer() {
       viewport={{ once: true }}
       variants={containerVariants}
     >
-
-<div className="absolute inset-0 h-full -z-10">
+      <div className="absolute inset-0 h-full -z-10">
         <Ballpit
           className="w-full h-full"
           count={50}
@@ -50,24 +49,16 @@ export default function Footer() {
         />
       </div>
 
-
-
-
       {/* Glassmorphism container */}
       <div className="container mx-auto max-w-6xl px-4">
-      <div className="backdrop-blur-3xl dark:backdrop-blur-3xl bg-white/10 rounded-2xl p-8 border border-white/20 shadow-xl">
-
+        <div className="backdrop-blur-3xl dark:backdrop-blur-3xl bg-white/10 rounded-2xl p-8 border border-white/20 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Portfolio section */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h3
-                className="text-xl font-medium text-black dark:text-white"
-              >
+              <h3 className="text-xl font-medium text-black dark:text-white">
                 Portafolio
               </h3>
-              <p
-                className="text-black dark:text-white text-sm leading-relaxed"
-              >
+              <p className="text-black dark:text-white text-sm leading-relaxed">
                 Desarrolladora web especializado en crear experiencias digitales
                 atractivas y funcionales.
               </p>
@@ -101,9 +92,7 @@ export default function Footer() {
 
             {/* Enlaces rápidos */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h3
-                className="text-xl font-medium text-black dark:text-white"
-              >
+              <h3 className="text-xl font-medium text-black dark:text-white">
                 Enlaces rápidos
               </h3>
               <nav className="flex flex-col space-y-2">
@@ -129,9 +118,7 @@ export default function Footer() {
 
             {/* Contacto */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h3
-                className="text-xl font-medium text-black dark:text-white"
-              >
+              <h3 className="text-xl font-medium text-black dark:text-white">
                 Contacto
               </h3>
               <div className="space-y-2 text-sm">

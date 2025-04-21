@@ -83,7 +83,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="container py-20">
+    <section id="projects" className="container py-16">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
