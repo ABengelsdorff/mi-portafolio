@@ -24,9 +24,9 @@ export default function Nav() {
 
   const navLinks = [
     { name: "Inicio", href: "#hero" },
-    { name: "Sobre mí", href: "#about" },
     { name: "Habilidades", href: "#skills" },
     { name: "Proyectos", href: "#projects" },
+    { name: "Sobre mí", href: "#about" },
     { name: "Contacto", href: "#contact" },
   ];
 

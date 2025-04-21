@@ -51,7 +51,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-16">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -227,7 +227,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="p-4 w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium py-3 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-xl transition-all text-center block"
+                className="p-4 w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium py-3 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-xl transition-all flex justify-center items-center text-center "
               >
                 {isSubmitting ? (
                   <span className="flex items-center">
@@ -256,7 +256,7 @@ export default function Contact() {
                 ) : (
                   <span className="flex items-center">
                     <Send className="h-5 w-5 mr-2" />
-                    Enviar mensaje
+                    Enviar mensaje por correo
                   </span>
                 )}
               </button>
