@@ -1,8 +1,8 @@
 import Nav from "./components/navbar/nav";
-import Projects from "./components/projects";
-import Skills from "./components/skills";
-import Footer from "./components/footer";
-import About from "./components/about";
+import Projects from "./components/projects/projects";
+import Skills from "./components/skills/skills";
+import Footer from "./components/footer/footer";
+import About from "./components/about/about";
 import Hero from "./components/hero/hero";
 import Contact from "./components/contact/contact";
 
