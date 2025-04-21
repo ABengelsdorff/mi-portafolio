@@ -91,7 +91,7 @@ export default function Hero() {
         </motion.div>
 
         {/* TARJETA 3D - Escritorio */}
-        <div className="absolute top-0 right-0 w-full h-screen md:flex hidden justify-end items-start z-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-screen md:flex hidden justify-end items-start z-[-1] pointer-events-none">
           <Canvas
             camera={{ position: [0, 0, 13], fov: 25 }}
             style={{ backgroundColor: "transparent", pointerEvents: "auto" }}
