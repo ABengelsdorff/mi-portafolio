@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import Ballpit from "./Ballpit";
+import Ballpit from "../Ballpit";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
