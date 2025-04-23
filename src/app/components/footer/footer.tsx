@@ -64,7 +64,7 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4 pt-2">
                 <motion.a
-                  href="#"
+                  href="https://github.com/ABengelsdorff"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white transition-colors"
@@ -72,7 +72,7 @@ export default function Footer() {
                   <Github size={20} />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="linkedin.com/in/angelica-bengelsdorff"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white"
@@ -80,7 +80,7 @@ export default function Footer() {
                   <Linkedin size={20} />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="Angelica.bengelsdorff.5@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white"
@@ -97,19 +97,19 @@ export default function Footer() {
               </h3>
               <nav className="flex flex-col space-y-2">
                 {[
-                  "Inicio",
-                  "Sobre mí",
-                  "Habilidades",
-                  "Proyectos",
-                  "Contacto",
-                ].map((item) => (
-                  <motion.div key={item} whileHover={{ x: 5 }}>
+                  { label: "Inicio", href: "#hero" },
+                  { label: "Habilidades", href: "#skills" },
+                  { label: "Proyectos", href: "#projects" },
+                  { label: "Sobre mí", href: "#about" },
+                  { label: "Contacto", href: "#contact" },
+                ].map(({ label, href }) => (
+                  <motion.div key={label} whileHover={{ x: 5 }}>
                     <Link
-                      href="#"
+                      href={href}
                       className="text-black dark:text-white text-sm flex items-center gap-1 transition-colors"
                     >
                       <ExternalLink size={14} />
-                      <span>{item}</span>
+                      <span>{label}</span>
                     </Link>
                   </motion.div>
                 ))}
