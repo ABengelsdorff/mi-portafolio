@@ -44,7 +44,7 @@ const projects = [
       "/sobreMi.png",
       "/habilidades.png",
       "/contacto.png",
-      "/misproyectos.png",
+      "/proyectos.jpg",
       "/notFound.png",
     ],
     tags: [
