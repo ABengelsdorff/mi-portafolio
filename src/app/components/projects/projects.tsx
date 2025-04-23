@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, X } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button"; 
+import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -12,31 +12,70 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const projects = [
   {
     title: "Vets For Pets",
-    description: "Una aplicación web moderna construida con React y Next.js.",
+    description:
+      "Vets For Pets es una plataforma web integral 🐾 que conecta a dueños de mascotas con veterinarias cercanas mediante geolocalización. Permite a los usuarios buscar clínicas en su zona, chatear en tiempo real con veterinarios, llevar un registro detallado de la información de sus mascotas y solicitar asistencia de emergencia en caso de urgencias. Diseñada con foco en la experiencia del usuario, ofrece una solución moderna y accesible para facilitar el cuidado y bienestar animal.",
     images: ["/Home_1.png", "/maps.png", "/perfil.png"],
-    tags: ["React", "Next.js", "Tailwind CSS"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Leaflet",
+      "Geolocation API",
+      "Nominatim",
+      "Cloudinary",
+      "Socket.IO",
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM",
+      "JWT",
+    ],
+    demoUrl: "https://front-pf-vets-for-pets-main.vercel.app/",
+    githubUrl: "https://github.com/ABengelsdorff/vets-for-pets",
     featured: true,
+  },
+  {
+    title: "Mi Portafolio",
+    description:
+      "Sitio web personal desarrollado para presentar mi perfil profesional, proyectos y habilidades como desarrolladora. Incluye animaciones con Framer Motion, efectos visuales en 3D 🎨🧊, modo oscuro, diseño responsive y una sección interactiva de contacto. Es mi carta de presentación como Full Stack Developer. 💼✨",
+    images: ["/portafolioInicio.jpg", "/portafolioInicio1.jpg"],
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide Icons",
+      "EmailJS",
+      "Vite",
+    ],
+    demoUrl: "https://portafolio-bengelsdorff.vercel.app/",
+    githubUrl: "https://github.com/ABengelsdorff/mi-portafolio",
+    featured: false,
   },
   {
     title: "INNOVA",
     description:
-      "Una plataforma de comercio electrónico con carrito de compras y pasarela de pago.",
+      "Ecommerce INNOVA es una plataforma de comercio electrónico 🛒 desarrollada con tecnologías modernas, pensada para brindar una experiencia de usuario fluida, rápida e intuitiva. Incluye funcionalidades clave como registro e inicio de sesión 🔐, gestión completa de productos 📦, y un carrito de compras dinámico para facilitar el proceso de compra 🛍️.",
     images: ["/innova.jpg", "/iniciosesion.jpg", "/productos.jpg"],
-    tags: ["TypeScript", "React", "Node.js"],
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand",
+      "React Hook Form",
+      "Styled Components",
+      "Framer Motion",
+      "Lucide Icons",
+      "SweetAlert2",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "TypeORM",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    title: "Vets For Pets Mobile",
-    description:
-      "Versión móvil de la aplicación Vets For Pets con React Native.",
-    images: ["/Home_1.png", "/maps.png", "/perfil.png"],
-    tags: ["React Native", "Expo", "Firebase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/ABengelsdorff/Ecommerce",
     featured: false,
   },
 ];
@@ -160,7 +199,10 @@ export default function Projects() {
           className="text-center mt-16"
         >
           <Button asChild size="lg">
-            <Link href="https://github.com" target="_blank">
+            <Link
+              href="https://github.com/ABengelsdorff?tab=repositories"
+              target="_blank"
+            >
               <Github className="h-5 w-5 mr-2" />
               Ver más proyectos en GitHub
             </Link>
@@ -270,15 +312,18 @@ export default function Projects() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <Button asChild className="">
-                      <Link
-                        href={projects[selectedProject].demoUrl}
-                        target="_blank"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Ver demo
-                      </Link>
-                    </Button>
+                    {projects[selectedProject].demoUrl !== "#" &&
+                      projects[selectedProject].demoUrl !== "" && (
+                        <Button asChild>
+                          <Link
+                            href={projects[selectedProject].demoUrl}
+                            target="_blank"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Ver demo
+                          </Link>
+                        </Button>
+                      )}
 
                     <Button asChild variant="outline">
                       <Link

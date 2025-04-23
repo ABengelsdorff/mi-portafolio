@@ -100,10 +100,6 @@ export default function Skills() {
           <h3 className="text-2xl font-bold mb-4">
             ¿Buscas un desarrollador con estas habilidades?
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Estoy disponible para proyectos freelance y oportunidades de trabajo
-            a tiempo completo.
-          </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
