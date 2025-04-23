@@ -65,22 +65,28 @@ export default function Footer() {
               <div className="flex space-x-4 pt-2">
                 <motion.a
                   href="https://github.com/ABengelsdorff"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white transition-colors"
                 >
                   <Github size={20} />
                 </motion.a>
+
                 <motion.a
-                  href="linkedin.com/in/angelica-bengelsdorff"
+                  href="https://www.linkedin.com/in/angelica-bengelsdorff"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white"
                 >
                   <Linkedin size={20} />
                 </motion.a>
+
                 <motion.a
-                  href="Angelica.bengelsdorff.5@gmail.com"
+                  href="mailto:Angelica.bengelsdorff.5@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-black dark:text-white"
