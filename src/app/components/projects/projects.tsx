@@ -38,7 +38,15 @@ const projects = [
     title: "Mi Portafolio",
     description:
       "Sitio web personal desarrollado para presentar mi perfil profesional, proyectos y habilidades como desarrolladora. Incluye animaciones con Framer Motion, efectos visuales en 3D 🎨🧊, modo oscuro, diseño responsive y una sección interactiva de contacto. Es mi carta de presentación como Full Stack Developer. 💼✨",
-    images: ["/portafolioInicio.png", "/portafolioInicio1.png", "/sobreMi.png","/habilidades.png", "/contacto.png", "/misproyectos.png", "/notFound.png" ],
+    images: [
+      "/portafolioInicio.png",
+      "/portafolioInicio1.png",
+      "/sobreMi.png",
+      "/habilidades.png",
+      "/contacto.png",
+      "/misproyectos.png",
+      "/notFound.png",
+    ],
     tags: [
       "Next.js",
       "React",
@@ -134,9 +142,9 @@ export default function Projects() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text">
             Mis Proyectos
           </h2>
-          <p className=" max-w-2xl mx-auto text-lg">
-            Explora mi trabajo y descubre las soluciones que he creado para
-            diversos desafíos.
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+            Todo empezó con un &quot;Hola Mundo&quot;… y ahora el viaje continúa
+            entre componentes, estilos y ganas de seguir creciendo.
           </p>
         </motion.div>
 
@@ -178,7 +186,7 @@ export default function Projects() {
                     <Button
                       size="sm"
                       variant="default"
-                      className=" border-0 mt-28"
+                      className=" border-0 mt-28 transform transition-transform duration-300 group-hover:scale-110"
                       onClick={() => openProjectModal(index)}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
@@ -305,15 +313,14 @@ export default function Projects() {
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {projects[selectedProject].tags.map((tag, i) => (
-                     <span
-                     key={i}
-                     className="px-3 py-1 rounded-full text-sm 
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full text-sm 
                                 bg-primary/10 text-primary 
                                 dark:bg-purple-100 dark:text-primary"
-                   >
-                     {tag}
-                   </span>
-                   
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
 
