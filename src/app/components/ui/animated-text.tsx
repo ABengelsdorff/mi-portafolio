@@ -1,26 +1,37 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 interface AnimatedTextProps {
-  text: string
-  delay?: number
+  text: string;
+  delay?: number;
 }
 
 export default function AnimatedText({ text, delay = 0.1 }: AnimatedTextProps) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 100)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.5, // al menos el 50% visible
+      }
+    );
 
-    return () => clearTimeout(timer)
-  }, [])
+    const current = containerRef.current;
+    if (current) observer.observe(current);
+
+    return () => {
+      if (current) observer.unobserve(current);
+    };
+  }, []);
 
   return (
-    <span className="inline-block">
+    <span ref={containerRef} className="inline-block">
       {text.split("").map((char, index) => (
         <motion.span
           key={index}
@@ -33,5 +44,5 @@ export default function AnimatedText({ text, delay = 0.1 }: AnimatedTextProps) {
         </motion.span>
       ))}
     </span>
-  )
+  );
 }

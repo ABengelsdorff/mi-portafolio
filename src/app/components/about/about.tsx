@@ -26,12 +26,12 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
@@ -48,7 +48,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-bold mb-4">Mi Historia</h3>
@@ -79,7 +79,7 @@ export default function About() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow">

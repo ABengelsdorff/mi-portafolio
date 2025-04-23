@@ -31,10 +31,10 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="w-full py-8 relative z-10"
+      className="w-full py-10 relative z-10"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       variants={containerVariants}
     >
       <div className="absolute inset-0 h-full -z-10">

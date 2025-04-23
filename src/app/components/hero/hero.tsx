@@ -38,17 +38,20 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center md:hidden"
+          viewport={{ once: false }}
         >
           <div className="relative w-60 h-60 sm:w-60 sm:h-60">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-primary to-purple-400 rounded-full opacity-70 blur-2xl"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+              viewport={{ once: false }}
             />
             <motion.div
               className="relative w-full h-full bg-white dark:bg-gray-900 rounded-full overflow-hidden border-2 border-primary/20"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
+              viewport={{ once: false }}
             >
               <Image
                 src="/yo.jpg"
@@ -66,6 +69,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="order-2 md:order-1"
+          viewport={{ once: false }}
         >
           <p className="text-primary font-medium text-xl mb-2">¡Hola! 👋 Soy</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -173,6 +177,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        viewport={{ once: false }}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
