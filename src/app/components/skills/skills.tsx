@@ -20,8 +20,9 @@ export default function Skills() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Estas son las tecnologías y herramientas con las que trabajo para
-            crear soluciones web modernas y eficientes.
+          Aprender, aplicar, mejorar. 
+          Porque detrás de cada tecnología hay una oportunidad para innovar y una nueva forma de resolver desafíos. 
+          Estas son las herramientas que me acompañan en el día a día.
           </p>
         </motion.div>
 

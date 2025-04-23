@@ -38,9 +38,8 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Sobre Mí</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Soy desarrolladora web especializada en React, TypeScript y Next.js.
-            Me apasiona crear interfaces modernas, funcionales y pensadas para
-            el usuario.
+          Más allá del código, me interesa construir experiencias útiles y amigables. 
+          Me esfuerzo por mantenerme al día con las mejores prácticas y aprender algo nuevo en cada desafío.
           </p>
         </motion.div>
 
