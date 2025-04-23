@@ -6,12 +6,12 @@ import { Code, Server, Sparkles } from "lucide-react";
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16">
+    <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
@@ -70,7 +70,7 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               whileHover={{ y: -5 }}
               className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 border border-slate-100 dark:border-slate-700"
             >
@@ -93,7 +93,7 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 p-8 bg-primary/5 rounded-lg text-center"
         >

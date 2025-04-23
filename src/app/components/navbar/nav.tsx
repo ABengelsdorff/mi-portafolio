@@ -30,6 +30,15 @@ export default function Nav() {
     { name: "Contacto", href: "#contact" },
   ];
 
+  //bloqueo de scrol cuando el menu esta abierto (movil)
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
+  
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -103,6 +112,7 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
+            viewport={{ once: false }}
             // className="md:hidden bg-white dark:bg-gray-950 border-t dark:border-gray-800 "
             className="md:hidden bg-white/60 dark:bg-gray-950/60 backdrop-blur-md border-t dark:border-gray-800"
           >

@@ -38,7 +38,7 @@ const projects = [
     title: "Mi Portafolio",
     description:
       "Sitio web personal desarrollado para presentar mi perfil profesional, proyectos y habilidades como desarrolladora. Incluye animaciones con Framer Motion, efectos visuales en 3D 🎨🧊, modo oscuro, diseño responsive y una sección interactiva de contacto. Es mi carta de presentación como Full Stack Developer. 💼✨",
-    images: ["/portafolioInicio.jpg", "/portafolioInicio1.jpg"],
+    images: ["/portafolioInicio.png", "/portafolioInicio1.png", "/sobreMi.png","/habilidades.png", "/contacto.png", "/misproyectos.png", "/notFound.png" ],
     tags: [
       "Next.js",
       "React",
@@ -122,14 +122,14 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="container py-16">
+    <section id="projects" className="container py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
+          viewport={{ once: false }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text">
             Mis Proyectos
@@ -149,7 +149,7 @@ export default function Projects() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={cn(
                 "group overflow-hidden rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-purple-600/30",
@@ -194,7 +194,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-16"
         >
@@ -218,6 +218,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            viewport={{ once: false }}
             onClick={closeModal}
           >
             <motion.div
@@ -226,6 +227,7 @@ export default function Projects() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
               className="bg-card text-card-foreground border border-border rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-auto"
+              viewport={{ once: false }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
@@ -242,6 +244,7 @@ export default function Projects() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
                       className="w-full h-full object-cover"
+                      viewport={{ once: false }}
                     />
                   </AnimatePresence>
 
@@ -302,12 +305,15 @@ export default function Projects() {
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {projects[selectedProject].tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
+                     <span
+                     key={i}
+                     className="px-3 py-1 rounded-full text-sm 
+                                bg-primary/10 text-primary 
+                                dark:bg-purple-100 dark:text-primary"
+                   >
+                     {tag}
+                   </span>
+                   
                     ))}
                   </div>
 
