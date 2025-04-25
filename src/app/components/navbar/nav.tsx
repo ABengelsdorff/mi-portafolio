@@ -112,14 +112,18 @@ export default function Nav() {
             <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
-          <select
-            onChange={(e) => i18n.changeLanguage(e.target.value)}
-            value={i18n.language}
-            className="px-3 py-1 rounded-md bg-white dark:bg-slate-700 text-black dark:text-white border border-slate-300 dark:border-slate-600 text-sm focus:outline-none"
+          <Select
+            onValueChange={(value) => i18n.changeLanguage(value)}
+            defaultValue={i18n.language}
           >
-            <option value="es">ES</option>
-            <option value="pt">PT</option>
-          </select>
+            <SelectTrigger className="w-[120px]">
+              <SelectValue placeholder="Idioma" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="es">Español</SelectItem>
+              <SelectItem value="pt">Português</SelectItem>
+            </SelectContent>
+          </Select>
           <Button
             variant="ghost"
             size="icon"
