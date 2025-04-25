@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "intro": "¡Hola! 👋 Soy",
+    "role": "Desarrolladora Web Full Stack",
+    "description": "Creo experiencias web atractivas y funcionales con React, TypeScript y las últimas tecnologías web.",
+    "viewProjects": "Ver proyectos",
+    "contactMe": "Contáctame"
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "description": "Aprender, aplicar, mejorar. Porque detrás de cada tecnología hay una oportunidad para innovar y una nueva forma de resolver desafíos. Estas son las herramientas que me acompañan en el día a día.",
+    "frontend": "Desarrollo Frontend",
+    "backend": "Desarrollo Backend",
+    "tools": "Herramientas",
+    "cta": "¿Buscas un desarrollador con estas habilidades?",
+    "contact": "Contáctame"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "description": "Todo empezó con un \"Hola Mundo\"… y ahora el viaje continúa entre componentes, estilos y ganas de seguir creciendo.",
+    "details": "Ver detalles",
+    "more": "Ver más proyectos en GitHub",
+    "demo": "Ver demo",
+    "code": "Ver código"
+  },
+  "projectData": {
+    "vets": {
+      "title": "Vets For Pets",
+      "description": "Vets For Pets es una plataforma web integral 🐾 que conecta a dueños de mascotas con veterinarias cercanas mediante geolocalización. Permite a los usuarios buscar clínicas en su zona, chatear en tiempo real con veterinarios, llevar un registro detallado de la información de sus mascotas y solicitar asistencia de emergencia en caso de urgencias. Diseñada con foco en la experiencia del usuario, ofrece una solución moderna y accesible para facilitar el cuidado y bienestar animal."
+    },
+    "portfolio": {
+      "title": "Mi Portafolio",
+      "description": "Sitio web personal desarrollado para presentar mi perfil profesional, proyectos y habilidades como desarrolladora. Incluye animaciones con Framer Motion, efectos visuales en 3D 🎨🧊, modo oscuro, diseño responsive y una sección interactiva de contacto. Es mi carta de presentación como Full Stack Developer. 💼✨"
+    },
+    "innova": {
+      "title": "INNOVA",
+      "description": "Ecommerce INNOVA es una plataforma de comercio electrónico 🛒 desarrollada con tecnologías modernas, pensada para brindar una experiencia de usuario fluida, rápida e intuitiva. Incluye funcionalidades clave como registro e inicio de sesión 🔐, gestión completa de productos 📦, y un carrito de compras dinámico para facilitar el proceso de compra 🛍️."
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Más allá del código, me interesa construir experiencias útiles y amigables. Me esfuerzo por mantenerme al día con las mejores prácticas y aprender algo nuevo en cada desafío.",
+    "storyTitle": "Mi Historia",
+    "story1": "Mi viaje en el desarrollo comenzó hace algunos años, impulsado por una fuerte curiosidad por la tecnología y un deseo de crear soluciones que impacten en la vida real. A lo largo del tiempo, me especialicé en el desarrollo web, con un enfoque Full Stack y un especial interés por el Frontend.",
+    "story2": "Cada proyecto en el que participo representa una nueva oportunidad para aprender, mejorar y superarme. Me gusta mantener una mentalidad de crecimiento constante y rodearme de personas que también buscan dar lo mejor de sí.",
+    "story3": "Siempre estoy en búsqueda de nuevas herramientas y formas de mejorar. Me motiva seguir aprendiendo y aportar valor con soluciones creativas, funcionales y centradas en el usuario.",
+    "features": [
+      {
+        "title": "Desarrollo Web",
+        "description": "Creo soluciones digitales escalables, modernas y bien estructuradas."
+      },
+      {
+        "title": "Diseño UI/UX",
+        "description": "Diseño interfaces accesibles, atractivas y centradas en el usuario."
+      },
+      {
+        "title": "Rendimiento y Optimización",
+        "description": "Me enfoco en velocidad, eficiencia y experiencia fluida."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¡Hablemos!",
+    "description": "¿Tienes un proyecto en mente o quieres hablar sobre una oportunidad? Completa el formulario o contáctame a través de los siguientes medios.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "placeholderName": "Tu nombre",
+      "placeholderEmail": "tu@email.com",
+      "placeholderMessage": "Tu mensaje...",
+      "button": "Enviar mensaje por correo",
+      "sending": "Enviando..."
+    },
+    "successTitle": "Mensaje enviado",
+    "successDescription": "Gracias por contactarme. Te responderé lo antes posible.",
+    "successClose": "Cerrar",
+    "contactInfo": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "portfolioTitle": "Portafolio",
+    "portfolioDescription": "Desarrolladora web especializada en crear experiencias digitales atractivas y funcionales.",
+    "quickLinks": "Enlaces rápidos",
+    "contact": "Contacto",
+    "location": "Buenos Aires, Argentina",
+    "copyright": "Todos los derechos reservados.",
+    "links": {
+      "home": "Inicio",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "about": "Sobre mí",
+      "contact": "Contacto"
+    }
+  }
+}

@@ -3,25 +3,26 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Code, Palette, Rocket } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: <Code className="h-10 w-10 text-primary" />,
-      title: "Desarrollo Web",
-      description:
-        "Creo soluciones digitales escalables, modernas y bien estructuradas.",
+      title: t("about.features.0.title"),
+      description: t("about.features.0.description"),
     },
     {
       icon: <Palette className="h-10 w-10 text-primary" />,
-      title: "Diseño UI/UX",
-      description:
-        "Diseño interfaces accesibles, atractivas y centradas en el usuario.",
+      title: t("about.features.1.title"),
+      description: t("about.features.1.description"),
     },
     {
       icon: <Rocket className="h-10 w-10 text-primary" />,
-      title: "Rendimiento y Optimización",
-      description: "Me enfoco en velocidad, eficiencia y experiencia fluida.",
+      title: t("about.features.2.title"),
+      description: t("about.features.2.description"),
     },
   ];
 
@@ -35,11 +36,12 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Sobre Mí</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {t("about.title")}
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-          Más allá del código, me interesa construir experiencias útiles y amigables. 
-          Me esfuerzo por mantenerme al día con las mejores prácticas y aprender algo nuevo en cada desafío.
+            {t("about.intro")}
           </p>
         </motion.div>
 
@@ -50,25 +52,16 @@ export default function About() {
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-4">Mi Historia</h3>
+            <h3 className="text-2xl font-bold mb-4">{t("about.storyTitle")}</h3>
 
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Mi viaje en el desarrollo comenzó hace algunos años, impulsado por
-              una fuerte curiosidad por la tecnología y un deseo de crear
-              soluciones que impacten en la vida real. A lo largo del tiempo, me
-              especialicé en el desarrollo web, con un enfoque Full Stack y un
-              especial interés por el Frontend.
+              {t("about.story1")}
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Cada proyecto en el que participo representa una nueva oportunidad
-              para aprender, mejorar y superarme. Me gusta mantener una
-              mentalidad de crecimiento constante y rodearme de personas que
-              también buscan dar lo mejor de sí.
+              {t("about.story2")}
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Siempre estoy en búsqueda de nuevas herramientas y formas de
-              mejorar. Me motiva seguir aprendiendo y aportar valor con
-              soluciones creativas, funcionales y centradas en el usuario.
+              {t("about.story3")}
             </p>
           </motion.div>
 

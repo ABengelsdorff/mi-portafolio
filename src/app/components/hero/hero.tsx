@@ -18,12 +18,15 @@ import { Physics } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import Band from "./band";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/assets/3d/card.glb");
 useTexture.preload("/assets/images/tag_texture.png");
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="hero"
@@ -71,24 +74,25 @@ export default function Hero() {
           className="order-2 md:order-1"
           viewport={{ once: false }}
         >
-          <p className="text-primary font-medium text-xl mb-2">¡Hola! 👋 Soy</p>
+          <p className="text-primary font-medium text-xl mb-2">
+            {t("hero.intro")}
+          </p>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <AnimatedText text="Angelica Bengelsdorff" />
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 gradient-text">
-            Desarrolladora Web Full Stack
+            {t("hero.role")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
-            Creo experiencias web atractivas y funcionales con React, TypeScript
-            y las últimas tecnologías web.
+            {t("hero.description")}
           </p>
 
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg">
-              <Link href="#projects">Ver proyectos</Link>
+              <Link href="#projects">{t("hero.viewProjects")}</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="#contact">Contáctame</Link>
+              <Link href="#contact">{t("hero.contactMe")}</Link>
             </Button>
           </div>
 

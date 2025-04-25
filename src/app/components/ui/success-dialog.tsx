@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./dialog";
+import { useTranslation } from "react-i18next";
 
 interface SuccessDialogProps {
   open: boolean;
@@ -21,9 +22,10 @@ interface SuccessDialogProps {
 export default function SuccessDialog({
   open,
   onOpenChange,
-  title = "Mensaje enviado",
-  description = "Gracias por contactarme. Te responderé lo antes posible.",
+  title,
+  description,
 }: SuccessDialogProps) {
+  const { t } = useTranslation();
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
@@ -37,10 +39,8 @@ export default function SuccessDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md border-none shadow-xl bg-white dark:bg-gray-900 p-0 overflow-hidden">
-        {/* Fondo decorativo con gradiente */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-purple-400/40 opacity-50" />
 
-        {/* Confetti animation */}
         <AnimatePresence>
           {showConfetti && (
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -61,8 +61,8 @@ export default function SuccessDialog({
                       i % 3 === 0
                         ? "rgb(var(--primary))"
                         : i % 3 === 1
-                        ? "rgb(168, 85, 247)" // purple-500
-                        : "rgb(236, 72, 153)", // pink-500
+                        ? "rgb(168, 85, 247)"
+                        : "rgb(236, 72, 153)",
                     transform: `rotate(${Math.random() * 360}deg)`,
                   }}
                 />
@@ -91,18 +91,12 @@ export default function SuccessDialog({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                {title}
+                {title ?? t("contact.successTitle")}
               </motion.div>
             </DialogTitle>
             <DialogDescription className="text-center text-base mt-2">
-              {description}
+              {description ?? t("contact.successDescription")}
             </DialogDescription>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-center text-base mt-2"
-            ></motion.div>
           </DialogHeader>
 
           <motion.div
@@ -117,7 +111,7 @@ export default function SuccessDialog({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Cerrar
+              {t("contact.successClose")}
             </motion.button>
           </motion.div>
         </div>

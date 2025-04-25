@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Ballpit from "../Ballpit";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const currentYear = new Date().getFullYear();
 
   // Animation variants
@@ -56,11 +59,10 @@ export default function Footer() {
             {/* Portfolio section */}
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-xl font-medium text-black dark:text-white">
-                Portafolio
+                {t("footer.portfolioTitle")}
               </h3>
               <p className="text-black dark:text-white text-sm leading-relaxed">
-                Desarrolladora web especializado en crear experiencias digitales
-                atractivas y funcionales.
+                {t("footer.portfolioDescription")}
               </p>
               <div className="flex space-x-4 pt-2">
                 <motion.a
@@ -99,15 +101,15 @@ export default function Footer() {
             {/* Enlaces rápidos */}
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-xl font-medium text-black dark:text-white">
-                Enlaces rápidos
+                {t("footer.quickLinks")}
               </h3>
               <nav className="flex flex-col space-y-2">
                 {[
-                  { label: "Inicio", href: "#hero" },
-                  { label: "Habilidades", href: "#skills" },
-                  { label: "Proyectos", href: "#projects" },
-                  { label: "Sobre mí", href: "#about" },
-                  { label: "Contacto", href: "#contact" },
+                  { label: t("footer.links.home"), href: "#hero" },
+                  { label: t("footer.links.skills"), href: "#skills" },
+                  { label: t("footer.links.projects"), href: "#projects" },
+                  { label: t("footer.links.about"), href: "#about" },
+                  { label: t("footer.links.contact"), href: "#contact" },
                 ].map(({ label, href }) => (
                   <motion.div key={label} whileHover={{ x: 5 }}>
                     <Link
@@ -125,11 +127,11 @@ export default function Footer() {
             {/* Contacto */}
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-xl font-medium text-black dark:text-white">
-                Contacto
+                {t("footer.contact")}
               </h3>
               <div className="space-y-2 text-sm">
                 <p className="text-black dark:text-white">
-                  Buenos Aires, Argentina
+                  {t("footer.location")}
                 </p>
                 <p className="text-black dark:text-white">+54 3751 608480</p>
                 <p className="text-black dark:text-white break-all">
@@ -144,8 +146,7 @@ export default function Footer() {
             variants={itemVariants}
             className="mt-8 pt-6 border-t border-white/10 text-center text-black dark:text-white text-base"
           >
-            © {currentYear} Bengelsdorff Angélica. Todos los derechos
-            reservados.
+            © {currentYear} Bengelsdorff Angélica. {t("footer.copyright")}
           </motion.div>
         </div>
       </div>

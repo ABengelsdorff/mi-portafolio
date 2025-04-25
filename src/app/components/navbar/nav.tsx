@@ -8,6 +8,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import GooeyNav from "./GooeyNav";
 import "./GooeyNav.css";
+import { useTranslation } from "react-i18next";
+import i18n from "@/lib/i18n";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 export default function Nav() {
   const { theme, setTheme } = useTheme();
@@ -22,12 +31,14 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const { t } = useTranslation();
+
   const navLinks = [
-    { name: "Inicio", href: "#hero" },
-    { name: "Habilidades", href: "#skills" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Sobre mí", href: "#about" },
-    { name: "Contacto", href: "#contact" },
+    { name: t("nav.home"), href: "#hero" },
+    { name: t("nav.skills"), href: "#skills" },
+    { name: t("nav.projects"), href: "#projects" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   //bloqueo de scrol cuando el menu esta abierto (movil)
@@ -37,7 +48,6 @@ export default function Nav() {
       document.body.style.overflow = "auto";
     };
   }, [isMobileMenuOpen]);
-  
 
   return (
     <header
@@ -76,6 +86,19 @@ export default function Nav() {
             <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
+
+          <Select
+            onValueChange={(value) => i18n.changeLanguage(value)}
+            defaultValue={i18n.language}
+          >
+            <SelectTrigger className="w-[120px]">
+              <SelectValue placeholder="Idioma" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="es">Español</SelectItem>
+              <SelectItem value="pt">Português</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Mobile Menu Button */}
@@ -89,6 +112,14 @@ export default function Nav() {
             <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
+          <select
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            value={i18n.language}
+            className="px-3 py-1 rounded-md bg-white dark:bg-slate-700 text-black dark:text-white border border-slate-300 dark:border-slate-600 text-sm focus:outline-none"
+          >
+            <option value="es">ESPAÑOL</option>
+            <option value="pt">PORTUGUÊS</option>
+          </select>
           <Button
             variant="ghost"
             size="icon"
