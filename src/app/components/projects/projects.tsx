@@ -8,87 +8,87 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const projects = [
-  {
-    title: "Vets For Pets",
-    description:
-      "Vets For Pets es una plataforma web integral 🐾 que conecta a dueños de mascotas con veterinarias cercanas mediante geolocalización. Permite a los usuarios buscar clínicas en su zona, chatear en tiempo real con veterinarios, llevar un registro detallado de la información de sus mascotas y solicitar asistencia de emergencia en caso de urgencias. Diseñada con foco en la experiencia del usuario, ofrece una solución moderna y accesible para facilitar el cuidado y bienestar animal.",
-    images: ["/Home_1.png", "/maps.png", "/perfil.png"],
-    tags: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Leaflet",
-      "Geolocation API",
-      "Nominatim",
-      "Cloudinary",
-      "Socket.IO",
-      "NestJS",
-      "PostgreSQL",
-      "TypeORM",
-      "JWT",
-    ],
-    demoUrl: "https://front-pf-vets-for-pets-main.vercel.app/",
-    githubUrl: "https://github.com/ABengelsdorff/vets-for-pets",
-    featured: true,
-  },
-  {
-    title: "Mi Portafolio",
-    description:
-      "Sitio web personal desarrollado para presentar mi perfil profesional, proyectos y habilidades como desarrolladora. Incluye animaciones con Framer Motion, efectos visuales en 3D 🎨🧊, modo oscuro, diseño responsive y una sección interactiva de contacto. Es mi carta de presentación como Full Stack Developer. 💼✨",
-    images: [
-      "/portafolioInicio.png",
-      "/portafolioInicio1.png",
-      "/sobreMi.png",
-      "/habilidades.png",
-      "/contacto.png",
-      "/proyectos.jpg",
-      "/notFound.png",
-    ],
-    tags: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Lucide Icons",
-      "EmailJS",
-      "Vite",
-    ],
-    demoUrl: "https://portafolio-bengelsdorff.vercel.app/",
-    githubUrl: "https://github.com/ABengelsdorff/mi-portafolio",
-    featured: false,
-  },
-  {
-    title: "INNOVA",
-    description:
-      "Ecommerce INNOVA es una plataforma de comercio electrónico 🛒 desarrollada con tecnologías modernas, pensada para brindar una experiencia de usuario fluida, rápida e intuitiva. Incluye funcionalidades clave como registro e inicio de sesión 🔐, gestión completa de productos 📦, y un carrito de compras dinámico para facilitar el proceso de compra 🛍️.",
-    images: ["/innova.jpg", "/iniciosesion.jpg", "/productos.jpg"],
-    tags: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Zustand",
-      "React Hook Form",
-      "Styled Components",
-      "Framer Motion",
-      "Lucide Icons",
-      "SweetAlert2",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "TypeORM",
-    ],
-    demoUrl: "#",
-    githubUrl: "https://github.com/ABengelsdorff/Ecommerce",
-    featured: false,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      title: t("projectData.vets.title"),
+      description: t("projectData.vets.description"),
+      images: ["/Home_1.png", "/maps.png", "/perfil.png"],
+      tags: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "TypeScript",
+        "Leaflet",
+        "Geolocation API",
+        "Nominatim",
+        "Cloudinary",
+        "Socket.IO",
+        "NestJS",
+        "PostgreSQL",
+        "TypeORM",
+        "JWT",
+      ],
+      demoUrl: "https://front-pf-vets-for-pets-main.vercel.app/",
+      githubUrl: "https://github.com/ABengelsdorff/vets-for-pets",
+      featured: true,
+    },
+    {
+      title: t("projectData.portfolio.title"),
+      description: t("projectData.portfolio.description"),
+      images: [
+        "/portafolioInicio.png",
+        "/portafolioInicio1.png",
+        "/sobreMi.png",
+        "/habilidades.png",
+        "/contacto.png",
+        "/proyectos.jpg",
+        "/notFound.png",
+      ],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Lucide Icons",
+        "EmailJS",
+        "Vite",
+      ],
+      demoUrl: "https://portafolio-bengelsdorff.vercel.app/",
+      githubUrl: "https://github.com/ABengelsdorff/mi-portafolio",
+      featured: false,
+    },
+    {
+      title: t("projectData.innova.title"),
+      description: t("projectData.innova.description"),
+      images: ["/innova.jpg", "/iniciosesion.jpg", "/productos.jpg"],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Zustand",
+        "React Hook Form",
+        "Styled Components",
+        "Framer Motion",
+        "Lucide Icons",
+        "SweetAlert2",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "TypeORM",
+      ],
+      demoUrl: "#",
+      githubUrl: "https://github.com/ABengelsdorff/Ecommerce",
+      featured: false,
+    },
+  ];
+
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -140,11 +140,10 @@ export default function Projects() {
           viewport={{ once: false }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text">
-            Mis Proyectos
+            {t("projects.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Todo empezó con un &quot;Hola Mundo&quot;… y ahora el viaje continúa
-            entre componentes, estilos y ganas de seguir creciendo.
+            {t("projects.description")}
           </p>
         </motion.div>
 
@@ -190,7 +189,7 @@ export default function Projects() {
                       onClick={() => openProjectModal(index)}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
-                      Ver detalles
+                      {t("projects.details")}
                     </Button>
                   </div>
                 </div>
@@ -212,7 +211,7 @@ export default function Projects() {
               target="_blank"
             >
               <Github className="h-5 w-5 mr-2" />
-              Ver más proyectos en GitHub
+              {t("projects.more")}
             </Link>
           </Button>
         </motion.div>
@@ -333,7 +332,7 @@ export default function Projects() {
                             target="_blank"
                           >
                             <ExternalLink className="h-4 w-4 mr-2" />
-                            Ver demo
+                            {t("projects.demo")}
                           </Link>
                         </Button>
                       )}
@@ -344,7 +343,7 @@ export default function Projects() {
                         target="_blank"
                       >
                         <Github className="h-4 w-4 mr-2" />
-                        Ver código
+                        {t("projects.code")}
                       </Link>
                     </Button>
                   </div>

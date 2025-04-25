@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import SuccessDialog from "../ui/success-dialog";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,7 +63,9 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contáctame</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {t("contact.title")}
+          </h2>
         </motion.div>
 
         <div className="flex flex-col md:flex-row gap-10">
@@ -72,11 +77,9 @@ export default function Contact() {
             viewport={{ once: false, margin: "-100px" }}
             className="md:w-1/2"
           >
-            <h3 className="text-2xl font-bold mb-6">¡Hablemos!</h3>
+            <h3 className="text-2xl font-bold mb-6">{t("contact.subtitle")}</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-8">
-              ¿Tienes un proyecto en mente o quieres hablar sobre una
-              oportunidad? Completa el formulario o contáctame a través de los
-              siguientes medios.
+              {t("contact.description")}
             </p>
 
             <div className="space-y-4">
@@ -85,7 +88,9 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
+                  <h4 className="font-medium">
+                    {t("contact.contactInfo.email")}
+                  </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
                       href="mailto:Angelica.bengelsdorff.5@gmail.com?subject=Contacto%20desde%20tu%20portfolio&body=Hola%20Angélica,%20me%20gustaría%20ponerme%20en%20contacto..."
@@ -103,7 +108,9 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Teléfono</h4>
+                  <h4 className="font-medium">
+                    {t("contact.contactInfo.phone")}
+                  </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
                       href="tel:+543751608480"
@@ -120,7 +127,9 @@ export default function Contact() {
                   <Linkedin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-medium">LinkedIn</h4>
+                  <h4 className="font-medium">
+                    {t("contact.contactInfo.linkedin")}
+                  </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
                       href="https://www.linkedin.com/in/angelica-bengelsdorff"
@@ -139,7 +148,9 @@ export default function Contact() {
                   <Github className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-medium">GitHub</h4>
+                  <h4 className="font-medium">
+                    {t("contact.contactInfo.github")}
+                  </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
                       href="https://github.com/ABengelsdorff"
@@ -172,7 +183,7 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Nombre
+                  {t("contact.form.name")}
                 </label>
                 <input
                   type="text"
@@ -182,7 +193,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  placeholder="Tu nombre"
+                  placeholder={t("contact.form.placeholderName")}
                 />
               </div>
 
@@ -191,7 +202,7 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  Email
+                  {t("contact.form.email")}
                 </label>
                 <input
                   type="email"
@@ -201,7 +212,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  placeholder="tu@email.com"
+                  placeholder={t("contact.form.placeholderEmail")}
                 />
               </div>
 
@@ -210,7 +221,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Mensaje
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   id="message"
@@ -220,7 +231,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  placeholder="Tu mensaje..."
+                  placeholder={t("contact.form.placeholderMessage")}
                 />
               </div>
 
@@ -251,12 +262,12 @@ export default function Contact() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    Enviando...
+                    {t("contact.form.sending")}
                   </span>
                 ) : (
                   <span className="flex items-center">
                     <Send className="h-5 w-5 mr-2" />
-                    Enviar mensaje por correo
+                    {t("contact.form.button")}
                   </span>
                 )}
               </button>
