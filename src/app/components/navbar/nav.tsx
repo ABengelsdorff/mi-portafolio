@@ -117,8 +117,8 @@ export default function Nav() {
             value={i18n.language}
             className="px-3 py-1 rounded-md bg-white dark:bg-slate-700 text-black dark:text-white border border-slate-300 dark:border-slate-600 text-sm focus:outline-none"
           >
-            <option value="es">ESPAÑOL</option>
-            <option value="pt">PORTUGUÊS</option>
+            <option value="es">ES</option>
+            <option value="pt">PT</option>
           </select>
           <Button
             variant="ghost"
