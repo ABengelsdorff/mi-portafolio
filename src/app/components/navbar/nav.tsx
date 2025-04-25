@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { Icon } from "@iconify/react";
 
 export default function Nav() {
   const { theme, setTheme } = useTheme();
@@ -88,17 +89,29 @@ export default function Nav() {
           </Button>
 
           <Select
-            onValueChange={(value) => i18n.changeLanguage(value)}
-            defaultValue={i18n.language}
-          >
-            <SelectTrigger className="w-[120px]">
-              <SelectValue placeholder="Idioma" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="es">Español</SelectItem>
-              <SelectItem value="pt">Português</SelectItem>
-            </SelectContent>
-          </Select>
+  onValueChange={(value) => i18n.changeLanguage(value)}
+  defaultValue={i18n.language}
+>
+<SelectTrigger className="w-auto min-w-fit px-4">
+
+    <SelectValue placeholder="Idioma" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="es">
+      <div className="flex items-center gap-2">
+      <Icon icon="emojione:flag-for-argentina" width="24" height="18" />
+        Es
+      </div>
+    </SelectItem>
+    <SelectItem value="pt">
+      <div className="flex items-center gap-2">
+      <Icon icon="emojione:flag-for-brazil" width="24" height="18" />
+        Pt
+      </div>
+    </SelectItem>
+  </SelectContent>
+</Select>
+
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,17 +126,28 @@ export default function Nav() {
             <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
           <Select
-            onValueChange={(value) => i18n.changeLanguage(value)}
-            defaultValue={i18n.language}
-          >
-            <SelectTrigger className="w-[120px]">
-              <SelectValue placeholder="Idioma" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="es">Español</SelectItem>
-              <SelectItem value="pt">Português</SelectItem>
-            </SelectContent>
-          </Select>
+  onValueChange={(value) => i18n.changeLanguage(value)}
+  defaultValue={i18n.language}
+>
+<SelectTrigger className="w-auto min-w-fit px-4">
+
+    <SelectValue placeholder="Idioma" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="es">
+      <div className="flex items-center gap-2">
+      <Icon icon="emojione:flag-for-argentina" width="24" height="18" />
+        Es
+      </div>
+    </SelectItem>
+    <SelectItem value="pt">
+      <div className="flex items-center gap-2">
+      <Icon icon="emojione:flag-for-brazil" width="24" height="18" />
+        Pt
+      </div>
+    </SelectItem>
+  </SelectContent>
+</Select>
           <Button
             variant="ghost"
             size="icon"
