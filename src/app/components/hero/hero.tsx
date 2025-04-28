@@ -88,13 +88,13 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="p-4">
               <Link href="#projects">{t("hero.viewProjects")}</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild  className="p-4">
               <Link href="#contact">{t("hero.contactMe")}</Link>
             </Button>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="p-4">
               <Link
                 href="./CV_FullStack_Angelica_Bengelsdorff.pdf"
                 target="_blank"
