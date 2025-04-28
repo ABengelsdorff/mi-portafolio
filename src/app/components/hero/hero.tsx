@@ -94,6 +94,15 @@ export default function Hero() {
             <Button variant="outline" size="lg" asChild>
               <Link href="#contact">{t("hero.contactMe")}</Link>
             </Button>
+            <Button asChild size="lg">
+              <Link
+                href="./CV_FullStack_Angelica_Bengelsdorff.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("hero.viewCv")}
+              </Link>
+            </Button>            
           </div>
 
           <div className="flex gap-4 mt-8">
