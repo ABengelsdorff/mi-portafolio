@@ -17,7 +17,16 @@ export default function Projects() {
     {
       title: t("projectData.vets.title"),
       description: t("projectData.vets.description"),
-      images: ["/Home_1.png", "/maps.png", "/perfil.png"],
+      images: [
+        "/vetsForPets/Home_1.jpg",        
+        "/vetsForPets/perfil.png",
+        "/vetsForPets/turnos.png",
+        "/vetsForPets/mascotas.png",
+        "/vetsForPets/Veterinarias.png",
+        "/vetsForPets/emergencias.png",
+        "/vetsForPets/quienesSomos.png",
+        "/vetsForPets/notFound.png",
+      ],
       tags: [
         "Next.js",
         "React",
@@ -41,13 +50,13 @@ export default function Projects() {
       title: t("projectData.portfolio.title"),
       description: t("projectData.portfolio.description"),
       images: [
-        "/portafolioInicio.png",
-        "/portafolioInicio1.png",
-        "/sobreMi.png",
-        "/habilidades.png",
-        "/contacto.png",
-        "/proyectos.jpg",
-        "/notFound.png",
+        "/portafolio/portafolioInicio.png",
+        "/portafolio/portafolioInicio1.png",
+        "/portafolio/sobreMi.png",
+        "/portafolio/habilidades.png",
+        "/portafolio/contacto.png",
+        "/portafolio/proyectos.jpg",
+        "/portafolio/notFound.png",
       ],
       tags: [
         "Next.js",
@@ -66,7 +75,14 @@ export default function Projects() {
     {
       title: t("projectData.innova.title"),
       description: t("projectData.innova.description"),
-      images: ["/innova.jpg", "/iniciosesion.jpg", "/productos.jpg"],
+      images: [
+        "/innova/innova.jpg",
+        "/innova/iniciosesion.jpg",
+        "/innova/productos.jpg",
+        "/innova/miperfil.jpg",
+        "/innova/ordenes.jpg",
+        "/innova/registro.jpg",
+      ],
       tags: [
         "Next.js",
         "React",
