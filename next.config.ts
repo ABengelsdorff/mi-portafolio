@@ -3,7 +3,7 @@ import nextI18NextConfig from './next-i18next.config';
 
 const nextConfig: NextConfig = {
   ...nextI18NextConfig,
-  // Ya no necesitás appDir
+  output: "export", 
 };
 
 export default nextConfig;
