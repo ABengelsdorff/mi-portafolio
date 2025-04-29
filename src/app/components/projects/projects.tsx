@@ -398,6 +398,23 @@ export default function Projects() {
 
                     {projects[selectedProject].title ===
                       t("projectData.legajoRh.title") && (
+
+<>
+<Button asChild>
+      <Link
+        href="https://youtu.be/hjgjQO_xigg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ExternalLink className="h-4 w-4 mr-2" />
+        {t("projects.presentation")}
+      </Link>
+    </Button>
+
+
+
+
+
                       <Button asChild variant="outline">
                         <Link
                           href="https://drive.google.com/uc?export=download&id=1kAVZRdtwEDRsC0lK0jodrpNHC5iGvGDa"
@@ -408,6 +425,8 @@ export default function Projects() {
                           {t("projects.download")}
                         </Link>
                       </Button>
+</>
+
                     )}
                   </div>
                 </div>
