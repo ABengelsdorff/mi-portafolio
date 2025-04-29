@@ -29,7 +29,8 @@
     "details": "Ver detalles",
     "more": "Ver más proyectos en GitHub",
     "demo": "Ver demo",
-    "code": "Ver código"
+    "code": "Ver código",
+    "download": "Descargar instalador"
   },
   "projectData": {
     "vets": {
@@ -43,6 +44,10 @@
     "innova": {
       "title": "INNOVA",
       "description": "Ecommerce INNOVA es una plataforma de comercio electrónico 🛒 desarrollada con tecnologías modernas, pensada para brindar una experiencia de usuario fluida, rápida e intuitiva. Incluye funcionalidades clave como registro e inicio de sesión 🔐, gestión completa de productos 📦, y un carrito de compras dinámico para facilitar el proceso de compra 🛍️."
+    },
+    "legajoRh": {
+      "title": "Gestión de Legajos RH",
+      "description": "Gestión de Legajos RH es una aplicación de escritorio offline desarrollada con Electron y tecnologías web, diseñada para digitalizar la gestión del legajo del personal de forma segura y eficiente. Permite registrar, buscar y editar información detallada de cada empleado (datos personales, grupo familiar, licencias, etc.), gestionar usuarios por roles, aplicar filtros avanzados y exportar datos en Excel o PDF. Integra una base de datos local, formularios validados, gráficos estadísticos y una interfaz moderna adaptada a entornos laborales reales."
     }
   },
   "about": {

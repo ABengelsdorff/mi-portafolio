@@ -29,7 +29,8 @@
     "details": "Ver detalhes",
     "more": "Ver mais projetos no GitHub",
     "demo": "Ver demo",
-    "code": "Ver código"
+    "code": "Ver código",
+    "download": "Baixar instalador"
   },
   "projectData": {
     "vets": {
@@ -43,6 +44,10 @@
     "innova": {
       "title": "INNOVA",
       "description": "Ecommerce INNOVA é uma plataforma de e-commerce 🛒 criada com tecnologias modernas, com foco em oferecer uma experiência fluida, rápida e intuitiva. Conta com funcionalidades como cadastro e login 🔐, gestão completa de produtos 📦, e um carrinho dinâmico para facilitar o processo de compra 🛍️."
+    },
+    "legajoRh": {
+      "title": "Gestão de Prontuários RH",
+      "description": "Gestão de Prontuários RH é um aplicativo de desktop offline desenvolvido com Electron e tecnologias web, projetado para digitalizar a gestão do prontuário de funcionários de forma segura e eficiente. Permite registrar, buscar e editar informações detalhadas de cada colaborador (dados pessoais, grupo familiar, licenças, etc.), gerenciar usuários por funções, aplicar filtros avançados e exportar dados em Excel ou PDF. Integra um banco de dados local, formulários validados, gráficos estatísticos e uma interface moderna adaptada a ambientes de trabalho reais."
     }
   },
   "about": {
