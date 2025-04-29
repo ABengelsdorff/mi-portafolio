@@ -57,7 +57,6 @@ export default function Projects() {
         "/legajoRH/buscar1.png",
         "/legajoRH/form.png",
         "/legajoRH/graficos.png",
-        "/legajoRH/imprimir.png",
         "/legajoRH/personal.png",
         "/legajoRH/icono.png",
       ],
