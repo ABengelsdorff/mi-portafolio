@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Server, Sparkles } from "lucide-react";
+import { Code, Server, Sparkles, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Skills() {
@@ -106,8 +106,9 @@ export default function Skills() {
           >
             <a
               href="#contact"
-              className="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
             >
+              <Mail className="h-5 w-5" />
               {t("skills.contact")}
             </a>
           </motion.div>

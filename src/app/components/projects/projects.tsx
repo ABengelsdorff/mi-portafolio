@@ -8,7 +8,18 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
+
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "../ui/dialog";
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -187,7 +198,7 @@ export default function Projects() {
           className="text-center mb-16"
           viewport={{ once: false }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-clip-text">
             {t("projects.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
@@ -397,35 +408,52 @@ export default function Projects() {
 
                     {projects[selectedProject].title ===
                       t("projectData.legajoRh.title") && (
+                      <>
+                        <Button asChild>
+                          <Link
+                            href="https://youtu.be/hjgjQO_xigg"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            {t("projects.presentation")}
+                          </Link>
+                        </Button>
 
-<>
-<Button asChild>
-      <Link
-        href="https://youtu.be/hjgjQO_xigg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <ExternalLink className="h-4 w-4 mr-2" />
-        {t("projects.presentation")}
-      </Link>
-    </Button>
-
-
-
-
-
-                      <Button asChild variant="outline">
-                        <Link
-                          href="https://drive.google.com/uc?export=download&id=1kAVZRdtwEDRsC0lK0jodrpNHC5iGvGDa"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          {t("projects.download")}
-                        </Link>
-                      </Button>
-</>
-
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button size="lg" className="p-4" variant="outline">
+                              {t("projects.download")}
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle className="mb-3">
+                                {t("downloadModal.title")}
+                              </DialogTitle>
+                              <DialogDescription>
+                                <Trans
+                                  i18nKey="downloadModal.description"
+                                  components={[
+                                    <strong key="user" />,
+                                    <strong key="pass" />,
+                                  ]}
+                                />
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter>
+                              <DialogClose asChild>
+                                <Button variant="outline">
+                                  {t("downloadModal.cancel")}
+                                </Button>
+                              </DialogClose>
+                              <Link href="/LegajoRH_Setup.exe" download>
+                                <Button>{t("downloadModal.confirm")}</Button>
+                              </Link>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </>
                     )}
                   </div>
                 </div>

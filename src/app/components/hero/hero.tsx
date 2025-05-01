@@ -2,11 +2,16 @@
 
 import { Button } from "@/app/components/ui/button";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import AnimatedText from "../ui/animated-text";
 import SplashCursor from "./splashCursor";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 import { Canvas, extend } from "@react-three/fiber";
 import {
   useGLTF,
@@ -91,7 +96,7 @@ export default function Hero() {
             <Button asChild size="lg" className="p-4">
               <Link href="#projects">{t("hero.viewProjects")}</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild  className="p-4">
+            <Button variant="outline" size="lg" asChild className="p-4">
               <Link href="#contact">{t("hero.contactMe")}</Link>
             </Button>
             <Button asChild size="lg" className="p-4">
@@ -102,38 +107,57 @@ export default function Hero() {
               >
                 {t("hero.viewCv")}
               </Link>
-            </Button>            
+            </Button>
           </div>
 
-          <div className="flex gap-4 mt-8">
-            <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="https://github.com/ABengelsdorff"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="https://www.linkedin.com/in/angelica-bengelsdorff"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="tel:+543751608480"
-                target="_blank"
-                aria-label="Teléfono"
-              >
-                <Phone className="h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
+          <TooltipProvider>
+            <div className="flex gap-4 mt-8">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="h-10 w-10 p-0" asChild>
+                    <Link
+                      href="https://github.com/ABengelsdorff"
+                      target="_blank"
+                      aria-label="GitHub"
+                    >
+                      <Github className="h-6 w-6"/>
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">GitHub</TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="h-10 w-10 p-0" asChild>
+                    <Link
+                      href="https://www.linkedin.com/in/angelica-bengelsdorff"
+                      target="_blank"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="h-6 w-6" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">LinkedIn</TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="h-10 w-10 p-0" asChild>
+                    <Link
+                      href="mailto:Angelica.bengelsdorff.5@gmail.com"
+                      target="_blank"
+                      aria-label="Mail"
+                    >
+                      <Mail className="h-6 w-6" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">Email</TooltipContent>
+              </Tooltip>
+            </div>
+          </TooltipProvider>
         </motion.div>
 
         {/* TARJETA 3D - Escritorio */}

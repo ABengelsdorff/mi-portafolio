@@ -51,6 +51,12 @@
       "description": "Gestão de Prontuários RH é um aplicativo de desktop offline desenvolvido com Electron e tecnologias web, projetado para digitalizar a gestão do prontuário de funcionários de forma segura e eficiente. Permite registrar, buscar e editar informações detalhadas de cada colaborador (dados pessoais, grupo familiar, licenças, etc.), gerenciar usuários por funções, aplicar filtros avançados e exportar dados em Excel ou PDF. Integra um banco de dados local, formulários validados, gráficos estatísticos e uma interface moderna adaptada a ambientes de trabalho reais."
     }
   },
+  "downloadModal": {
+  "title": "Informação importante",
+  "description": "Para começar a usar o aplicativo, faça login com o usuário <0>admin</0> e a senha <1>admin123</1>. Recomenda-se alterar essas credenciais no painel de administração após a instalação.",
+  "cancel": "Cancelar",
+  "confirm": "Baixar agora"
+},
   "about": {
     "title": "Sobre Mim",
     "intro": "Além do código, gosto de criar experiências úteis e amigáveis. Busco estar atualizada com as melhores práticas e aprender algo novo em cada desafio.",
