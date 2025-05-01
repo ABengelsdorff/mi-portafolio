@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import SuccessDialog from "../ui/success-dialog";
 import { useTranslation } from "react-i18next";
@@ -63,7 +63,7 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             {t("contact.title")}
           </h2>
         </motion.div>
@@ -82,41 +82,23 @@ export default function Contact() {
               {t("contact.description")}
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-500">
-                  <Mail className="w-5 h-5" />
+                  <Github className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-medium">
-                    {t("contact.contactInfo.email")}
+                    {t("contact.contactInfo.github")}
                   </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
-                      href="mailto:Angelica.bengelsdorff.5@gmail.com?subject=Contacto%20desde%20tu%20portfolio&body=Hola%20Angélica,%20me%20gustaría%20ponerme%20en%20contacto..."
+                      href="https://github.com/ABengelsdorff"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:underline text-primary"
                     >
-                      Angelica.bengelsdorff.5@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              {/* Teléfono */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-500">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-medium">
-                    {t("contact.contactInfo.phone")}
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    <a
-                      href="tel:+543751608480"
-                      className="hover:underline text-primary"
-                    >
-                      +54 3751 608480
+                      github.com/ABengelsdorff
                     </a>
                   </p>
                 </div>
@@ -145,20 +127,18 @@ export default function Contact() {
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-500">
-                  <Github className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-medium">
-                    {t("contact.contactInfo.github")}
+                    {t("contact.contactInfo.email")}
                   </h4>
                   <p className="text-slate-600 dark:text-slate-300">
                     <a
-                      href="https://github.com/ABengelsdorff"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="mailto:Angelica.bengelsdorff.5@gmail.com?subject=Contacto%20desde%20tu%20portfolio&body=Hola%20Angélica,%20me%20gustaría%20ponerme%20en%20contacto..."
                       className="hover:underline text-primary"
                     >
-                      github.com/ABengelsdorff
+                      Angelica.bengelsdorff.5@gmail.com
                     </a>
                   </p>
                 </div>

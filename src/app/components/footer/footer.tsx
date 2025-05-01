@@ -1,10 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
-import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Ballpit from "../Ballpit";
 import { useTranslation } from "react-i18next";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -41,7 +48,7 @@ export default function Footer() {
       <div className="absolute inset-0 h-full -z-10">
         <Ballpit
           className="w-full h-full"
-          count={50}
+          count={45}
           gravity={0.5}
           friction={0.9}
           wallBounce={0.9}
@@ -53,51 +60,22 @@ export default function Footer() {
       {/* Glassmorphism container */}
       <div className="container mx-auto max-w-6xl px-4">
         <div className="backdrop-blur-3xl dark:backdrop-blur-3xl bg-white/10 rounded-2xl p-8 border border-white/20 shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Portfolio section */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 text-center"
+            >
               <h3 className="text-xl font-medium text-black dark:text-white">
                 {t("footer.portfolioTitle")}
               </h3>
               <p className="text-black dark:text-white text-sm leading-relaxed">
                 {t("footer.portfolioDescription")}
               </p>
-              <div className="flex space-x-4 pt-2">
-                <motion.a
-                  href="https://github.com/ABengelsdorff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-black dark:text-white transition-colors"
-                >
-                  <Github size={20} />
-                </motion.a>
-
-                <motion.a
-                  href="https://www.linkedin.com/in/angelica-bengelsdorff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-black dark:text-white"
-                >
-                  <Linkedin size={20} />
-                </motion.a>
-
-                <motion.a
-                  href="mailto:Angelica.bengelsdorff.5@gmail.com"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-black dark:text-white"
-                >
-                  <Mail size={20} />
-                </motion.a>
-              </div>
             </motion.div>
 
             {/* Enlaces rápidos */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            {/* <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-xl font-medium text-black dark:text-white">
                 {t("footer.quickLinks")}
               </h3>
@@ -120,10 +98,13 @@ export default function Footer() {
                   </motion.div>
                 ))}
               </nav>
-            </motion.div>
+            </motion.div> */}
 
             {/* Contacto */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 text-center"
+            >
               <h3 className="text-xl font-medium text-black dark:text-white">
                 {t("footer.contact")}
               </h3>
@@ -131,18 +112,79 @@ export default function Footer() {
                 <p className="text-black dark:text-white">
                   {t("footer.location")}
                 </p>
-                <p className="text-black dark:text-white">+54 3751 608480</p>
-                <p className="text-black dark:text-white break-all">
+                {/* <p className="text-black dark:text-white break-all">
                   Angelica.bengelsdorff.5@gmail.com
-                </p>
+                </p> */}
+
+                <div className="flex justify-center items-center gap-4 pt-2">
+                  <TooltipProvider>
+                    <div className="flex gap-4">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            className="h-10 w-10 p-0"
+                            asChild
+                          >
+                            <Link
+                              href="https://github.com/ABengelsdorff"
+                              target="_blank"
+                              aria-label="GitHub"
+                            >
+                              <Github className="h-5 w-5" />
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom">GitHub</TooltipContent>
+                      </Tooltip>
+
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            className="h-10 w-10 p-0"
+                            asChild
+                          >
+                            <Link
+                              href="https://www.linkedin.com/in/angelica-bengelsdorff"
+                              target="_blank"
+                              aria-label="LinkedIn"
+                            >
+                              <Linkedin className="h-5 w-5" />
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom">LinkedIn</TooltipContent>
+                      </Tooltip>
+
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            className="h-10 w-10 p-0"
+                            asChild
+                          >
+                            <Link
+                              href="mailto:Angelica.bengelsdorff.5@gmail.com"
+                              target="_blank"
+                              aria-label="Mail"
+                            >
+                              <Mail className="h-5 w-5" />
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom">Email</TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </TooltipProvider>
+                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Copyright */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 pt-6 border-t border-white/10 text-center text-black dark:text-white text-base"
+            className="mt-4 pt-6 border-t border-white/10 text-center text-black dark:text-white text-base"
           >
             {t("footer.agradecimiento")}
           </motion.div>
