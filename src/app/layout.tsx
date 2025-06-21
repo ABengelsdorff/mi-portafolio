@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Angelica Bengelsdorff",
     images: [
       {
-        url: "/vistapreviaportafolio.jpg", 
+        url: "/vistaMiniatura.png", 
         width: 1200,
         height: 630,
         alt: "Vista previa del portafolio de Angelica Bengelsdorff",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Angelica Bengelsdorff | Portafolio",
     description:
       "Explorá mis proyectos y conocé mi enfoque como desarrolladora web.",
-    images: ["/vistapreviaportafolio.jpg"],
+    images: ["/vistaMiniatura.png"],
   },
 };
 
