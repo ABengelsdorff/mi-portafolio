@@ -1,47 +1,11 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { useFrame,  extend } from "@react-three/fiber";
-
+import { useFrame, extend } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
-import {
-  BallCollider,
-  CuboidCollider,
-  RigidBody,
-  useRopeJoint,
-  useSphericalJoint,
-  RapierRigidBody,
-} from "@react-three/rapier";
+import { BallCollider, CuboidCollider, RigidBody, useRopeJoint, useSphericalJoint, RapierRigidBody } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
-
-
-
 extend({ MeshLineGeometry, MeshLineMaterial });
-
-
-
-// declare global {
-//     namespace JSX {
-//       interface IntrinsicElements {
-//         meshLineGeometry: ThreeElements["bufferGeometry"] & {
-//           points?: THREE.Vector3[];
-//           attach?: string;
-//         };
-//         meshLineMaterial: ThreeElements["material"] & {
-//           color?: string;
-//           lineWidth?: number;
-//           map?: THREE.Texture;
-//           useMap?: number;
-//           repeat?: THREE.Vector2;
-//           depthTest?: boolean;
-//           resolution?: THREE.Vector2;
-//         };
-//       }
-//     }
-//   }
-  
-
-
 
 const segmentProps = {
   type: "dynamic",
@@ -54,10 +18,10 @@ const segmentProps = {
 export default function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef<THREE.Mesh<MeshLineGeometry, MeshLineMaterial>>(null);
   const fixed = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
-const j1 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
-const j2 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
-const j3 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
-const card = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
+  const j1 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
+  const j2 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
+  const j3 = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
+  const card = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
 
   const vec = new THREE.Vector3();
   const ang = new THREE.Vector3();
@@ -156,7 +120,7 @@ const card = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
 
   return (
     <>
-     <group position={[3, 4.6, 0]}>
+      <group position={[3, 4.6, 0]}>
 
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
@@ -188,11 +152,11 @@ const card = useRef<RapierRigidBody>(null) as React.RefObject<RapierRigidBody>;
             onPointerDown={(e) => (
               (e.target as Element)?.setPointerCapture(e.pointerId),
               card.current &&
-                drag(
-                  new THREE.Vector3()
-                    .copy(e.point)
-                    .sub(vec.copy(card.current.translation()))
-                )
+              drag(
+                new THREE.Vector3()
+                  .copy(e.point)
+                  .sub(vec.copy(card.current.translation()))
+              )
             )}
           >
             {/* @ts-expect-error geometry/map are not declared? */}
