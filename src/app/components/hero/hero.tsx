@@ -110,7 +110,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <TooltipProvider>
+          <TooltipProvider delayDuration={0}>
             <div className="flex gap-4 mt-8">
               <Tooltip>
                 <TooltipTrigger asChild>
