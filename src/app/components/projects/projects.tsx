@@ -9,22 +9,99 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
-
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-  DialogClose,
-} from "../ui/dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "../ui/dialog";
 
 export default function Projects() {
   const { t } = useTranslation();
 
   const projects = [
+    {
+      title: t("projectData.barberShop.title"),
+      description: t("projectData.barberShop.description"),
+      images: [
+
+        "/barberShop/HeroSeccion.png",
+        "/barberShop/EstilosPopulares.png",
+        "/barberShop/Barberos.png",
+        "/barberShop/Reservas.png",
+        "/barberShop/Galeria.png",
+        "/barberShop/Opiniones.png",
+
+        "/barberShop/DashboardAdmin.png",
+        "/barberShop/Analiticas.png",
+        "/barberShop/ReservasAdmin.png",
+        "/barberShop/BarberosAdmin.png",
+        "/barberShop/Horarios.png",
+        "/barberShop/ComentarioAdmin.png",
+      ],
+      tags: [
+        // Frontend
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Radix UI",
+        "Zustand",
+        "Recharts",
+        "Lucide Icons",
+        "Date-fns",
+        "JWT Decode",
+        "Framer Motion",
+        "React Day Picker",
+        // Backend
+        "Express",
+        "TypeORM",
+        "PostgreSQL",
+        "Node.js",
+        "JWT",
+        "Nodemailer",
+        "Node-Cron",
+        "Class Validator",
+        "Class Transformer",
+        "Docker",
+        "Docker Compose"
+      ],
+      clientDemoUrl: "https://www.barberturnos.shop/",
+      adminDemoUrl: "https://www.barberturnos.shop/admin",
+
+      githubUrl: "",
+      featured: true,
+    },
+
+    {
+      title: t("projectData.legajoRh.title"),
+      description: t("projectData.legajoRh.description"),
+      images: [
+        "/legajoRH/buscar.png",
+        "/legajoRH/InicioSesion.png",
+        "/legajoRH/Admin1.png",
+        "/legajoRH/Admin.png",
+        "/legajoRH/buscar1.png",
+        "/legajoRH/form.png",
+        "/legajoRH/graficos.png",
+        "/legajoRH/personal.png",
+        "/legajoRH/icono.png",
+      ],
+      tags: [
+        "Electron",
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "SQLite",
+        "Zustand",
+        "React Hook Form",
+        "JWT",
+        "Node.js",
+        "Express",
+        "TypeORM",
+      ],
+      demoUrl: "",
+      githubUrl: "",
+      featured: false,
+    },
+
+
     {
       title: t("projectData.vets.title"),
       description: t("projectData.vets.description"),
@@ -55,40 +132,10 @@ export default function Projects() {
       ],
       demoUrl: "https://front-pf-vets-for-pets-main.vercel.app/",
       githubUrl: "https://github.com/ABengelsdorff/vets-for-pets",
-      featured: true,
-    },
-    {
-      title: t("projectData.legajoRh.title"),
-      description: t("projectData.legajoRh.description"),
-      images: [
-        "/legajoRH/buscar.png",
-        "/legajoRH/InicioSesion.png",
-        "/legajoRH/Admin1.png",
-        "/legajoRH/Admin.png",
-        "/legajoRH/buscar1.png",
-        "/legajoRH/form.png",
-        "/legajoRH/graficos.png",
-        "/legajoRH/personal.png",
-        "/legajoRH/icono.png",
-      ],
-      tags: [
-        "Electron",
-        "React",
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "SQLite",
-        "Zustand",
-        "React Hook Form",
-        "JWT",
-        "Node.js",
-        "Express",
-        "TypeORM",
-      ],
-      demoUrl: "",
-      githubUrl: "https://github.com/ABengelsdorff/legajo-rh",
       featured: false,
     },
+
+
     {
       title: t("projectData.portfolio.title"),
       description: t("projectData.portfolio.description"),
@@ -102,19 +149,46 @@ export default function Projects() {
         "/portafolio/notFound.png",
       ],
       tags: [
+        // Frameworks & Lenguajes
         "Next.js",
         "React",
         "TypeScript",
+
+        // Estilos y UI
         "Tailwind CSS",
-        "Framer Motion",
+        "Radix UI",
         "Lucide Icons",
+        "TailwindCSS Animate",
+
+        // Animaciones y efectos
+        "Framer Motion",
+        "GSAP",
+        "Three.js",
+        "React Three Fiber",
+        "React Three Drei",
+        "React Three Rapier",
+        "Three-Stdlib",
+        "Meshline",
+        "OGL",
+
+        // Internacionalización
+        "i18next",
+        "React i18next",
+        "next-i18next",
+
+        // Funcionalidades extra
         "EmailJS",
-        "Vite",
+        "EmailJS Browser",
+        "Radix Tooltip",
+        "Next Themes",
+        "React World Flags",
       ],
-      demoUrl: "https://portafolio-bengelsdorff.vercel.app/",
+      demoUrl: "",
       githubUrl: "https://github.com/ABengelsdorff/mi-portafolio",
       featured: false,
     },
+
+
     // {
     //   title: t("projectData.innova.title"),
     //   description: t("projectData.innova.description"),
@@ -302,9 +376,8 @@ export default function Projects() {
                     <motion.img
                       key={currentImageIndex}
                       src={projects[selectedProject].images[currentImageIndex]}
-                      alt={`${projects[selectedProject].title} - Imagen ${
-                        currentImageIndex + 1
-                      }`}
+                      alt={`${projects[selectedProject].title} - Imagen ${currentImageIndex + 1
+                        }`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -383,78 +456,145 @@ export default function Projects() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    {projects[selectedProject].demoUrl !== "#" &&
-                      projects[selectedProject].demoUrl !== "" && (
-                        <Button asChild>
-                          <Link
-                            href={projects[selectedProject].demoUrl}
-                            target="_blank"
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            {t("projects.demo")}
-                          </Link>
-                        </Button>
-                      )}
 
-                    <Button asChild variant="outline">
-                      <Link
-                        href={projects[selectedProject].githubUrl}
-                        target="_blank"
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        {t("projects.code")}
-                      </Link>
-                    </Button>
 
-                    {projects[selectedProject].title ===
-                      t("projectData.legajoRh.title") && (
+
+
+                    {projects[selectedProject].title === t("projectData.barberShop.title") && (
                       <>
-                        <Button asChild>
-                          <Link
-                            href="https://youtu.be/hjgjQO_xigg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            {t("projects.presentation")}
-                          </Link>
-                        </Button>
+                        {projects[selectedProject].clientDemoUrl && (
+                          <Button asChild>
+                            <Link
+                              href={projects[selectedProject].clientDemoUrl}
+                              target="_blank"
+                            >
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              {t("projects.clientDemo")}
+                            </Link>
+                          </Button>
+                        )}
 
                         <Dialog>
                           <DialogTrigger asChild>
-                            <Button size="lg" className="p-4" variant="outline">
-                              {t("projects.download")}
+                            <Button variant="outline">
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              {t("projects.adminDemo")}
                             </Button>
                           </DialogTrigger>
+
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle className="mb-3">
-                                {t("downloadModal.title")}
-                              </DialogTitle>
-                              <DialogDescription>
-                                <Trans
-                                  i18nKey="downloadModal.description"
-                                  components={[
-                                    <strong key="user" />,
-                                    <strong key="pass" />,
-                                  ]}
-                                />
-                              </DialogDescription>
+                              <DialogTitle>{t("adminDemoModal.title")}</DialogTitle>
+                              <DialogDescription
+                                dangerouslySetInnerHTML={{
+                                  __html: t("adminDemoModal.description"),
+                                }}
+                              />
                             </DialogHeader>
-                            <DialogFooter>
+
+                            <DialogFooter className="mt-4">
                               <DialogClose asChild>
                                 <Button variant="outline">
-                                  {t("downloadModal.cancel")}
+                                  {t("adminDemoModal.cancel")}
                                 </Button>
                               </DialogClose>
-                              <Link href="/LegajoRH_Setup.exe" download>
-                                <Button>{t("downloadModal.confirm")}</Button>
-                              </Link>
+                              {projects[selectedProject].adminDemoUrl && (
+                                <Link
+                                  href={projects[selectedProject].adminDemoUrl}
+                                  target="_blank"
+                                >
+                                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                                    {t("adminDemoModal.confirm")}
+                                  </Button>
+                                </Link>
+                              )}
                             </DialogFooter>
                           </DialogContent>
                         </Dialog>
                       </>
                     )}
+
+                    {/* Mostrar botón de demo y/o GitHub para el resto de proyectos */}
+                    {projects[selectedProject].title !== t("projectData.barberShop.title") &&
+                      projects[selectedProject].title !== t("projectData.legajoRh.title") && (
+                        <>
+                          {projects[selectedProject].demoUrl && (
+                            <Button asChild>
+                              <Link
+                                href={projects[selectedProject].demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                {t("projects.demo")}
+                              </Link>
+                            </Button>
+                          )}
+
+                          {projects[selectedProject].githubUrl && (
+                            <Button asChild variant="outline">
+                              <Link
+                                href={projects[selectedProject].githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="h-4 w-4 mr-2" />
+                                {t("projects.code")}
+                              </Link>
+                            </Button>
+                          )}
+                        </>
+                      )}
+
+                    {projects[selectedProject].title ===
+                      t("projectData.legajoRh.title") && (
+                        <>
+                          <Button asChild>
+                            <Link
+                              href="https://youtu.be/hjgjQO_xigg"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              {t("projects.presentation")}
+                            </Link>
+                          </Button>
+
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button size="lg" className="p-4" variant="outline">
+                                {t("projects.download")}
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                              <DialogHeader>
+                                <DialogTitle className="mb-3">
+                                  {t("downloadModal.title")}
+                                </DialogTitle>
+                                <DialogDescription>
+                                  <Trans
+                                    i18nKey="downloadModal.description"
+                                    components={[
+                                      <strong key="user" />,
+                                      <strong key="pass" />,
+                                    ]}
+                                  />
+                                </DialogDescription>
+                              </DialogHeader>
+                              <DialogFooter>
+                                <DialogClose asChild>
+                                  <Button variant="outline">
+                                    {t("downloadModal.cancel")}
+                                  </Button>
+                                </DialogClose>
+                                <Link href="/LegajoRH_Setup.exe" download>
+                                  <Button>{t("downloadModal.confirm")}</Button>
+                                </Link>
+                              </DialogFooter>
+                            </DialogContent>
+                          </Dialog>
+                        </>
+                      )}
                   </div>
                 </div>
               </div>

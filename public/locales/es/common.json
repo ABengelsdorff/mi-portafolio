@@ -29,11 +29,17 @@
     "details": "Ver detalles",
     "more": "Ver más proyectos en GitHub",
     "demo": "Ver demo",
+    "clientDemo": "Ver demo Cliente",
+    "adminDemo": "Ver demo Admin",
     "code": "Ver código",
     "presentation": "Ver presentación",
     "download": "Descargar instalador"
   },
   "projectData": {
+    "barberShop": {
+      "title": "Barber Shop",
+      "description": "Barber Shop es una plataforma web ✂️ para barberías modernas. Permite a los clientes reservar turnos online fácilmente y a los administradores gestionar barberos, servicios y horarios desde un panel centralizado. Incluye métricas en tiempo real para analizar el rendimiento del negocio y mejorar la toma de decisiones."
+    },
     "vets": {
       "title": "Vets For Pets",
       "description": "Vets For Pets es una plataforma web integral 🐾 que conecta a dueños de mascotas con veterinarias cercanas mediante geolocalización. Permite a los usuarios buscar clínicas en su zona, chatear en tiempo real con veterinarios, llevar un registro detallado de la información de sus mascotas y solicitar asistencia de emergencia en caso de urgencias. Diseñada con foco en la experiencia del usuario, ofrece una solución moderna y accesible para facilitar el cuidado y bienestar animal."
@@ -52,11 +58,17 @@
     }
   },
   "downloadModal": {
-  "title": "Información importante",
-  "description": "Para comenzar a usar la aplicación, iniciá sesión con el usuario <0>admin</0> y la contraseña <1>admin123</1>. Se recomienda cambiar estas credenciales desde el panel de administración una vez instalada la aplicación.",
-  "cancel": "Cancelar",
-  "confirm": "Descargar ahora"
-},
+    "title": "Información importante",
+    "description": "Para comenzar a usar la aplicación, iniciá sesión con el usuario <0>admin</0> y la contraseña <1>admin123</1>. Se recomienda cambiar estas credenciales desde el panel de administración una vez instalada la aplicación.",
+    "cancel": "Cancelar",
+    "confirm": "Descargar ahora"
+  },
+  "adminDemoModal": {
+    "title": "Información importante",
+    "description": "Para comenzar a usar el panel de administración, iniciá sesión con:<br /><br /><strong>📧 Correo:</strong> <code>admin@barber.com</code><br /><strong>🔒 Contraseña:</strong> <code>admin123</code><br /><br />",
+    "cancel": "Cancelar",
+    "confirm": "Ver demo Admin"
+  },
   "about": {
     "title": "Sobre Mí",
     "intro": "Más allá del código, me interesa construir experiencias útiles y amigables. Me esfuerzo por mantenerme al día con las mejores prácticas y aprender algo nuevo en cada desafío.",
