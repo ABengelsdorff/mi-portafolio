@@ -6,19 +6,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import AnimatedText from "../ui/animated-text";
 import SplashCursor from "./splashCursor";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { Canvas, extend } from "@react-three/fiber";
-import {
-  useGLTF,
-  useTexture,
-  Environment,
-  Lightformer,
-} from "@react-three/drei";
+import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import Band from "./band";
