@@ -38,6 +38,9 @@ export default function Skills() {
                 "HTML5 / CSS3",
                 "Tailwind CSS",
                 "Framer Motion",
+                "i18next",
+                "React Hook Form",
+                "Zustand"
               ],
             },
             {
@@ -50,6 +53,9 @@ export default function Skills() {
                 "SQLite / PostgreSQL",
                 "JWT (Autenticación)",
                 "APIs REST",
+                "Docker",
+                "Nginx",
+                "Bcrypt"
               ],
             },
             {
@@ -61,8 +67,10 @@ export default function Skills() {
                 "Figma",
                 "Vercel",
                 "Postman",
-                "Zustand",
                 "Electron",
+                "Cloudinary",
+                "Trello",
+                "Responsive Design"
               ],
             },
           ].map((category, index) => (
