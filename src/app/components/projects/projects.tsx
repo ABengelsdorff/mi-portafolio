@@ -61,8 +61,8 @@ export default function Projects() {
         "Docker",
         "Docker Compose"
       ],
-      clientDemoUrl: "https://www.barberturnos.shop/",
-      adminDemoUrl: "https://www.barberturnos.shop/admin",
+      clientDemoUrl: "https://demo.barberturnos.shop/",
+      adminDemoUrl: "https://demo.barberturnos.shop/admin",
 
       githubUrl: "",
       featured: true,
