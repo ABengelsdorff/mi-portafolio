@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, X } from "lucide-react";
+import { ExternalLink, Github, X, Copy } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "../ui/dialog";
 
+
 export default function Projects() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("admin@barber.com\nadmin123");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const { t } = useTranslation();
 
   const projects = [
@@ -489,12 +498,23 @@ export default function Projects() {
                                 dangerouslySetInnerHTML={{
                                   __html: t("adminDemoModal.description"),
                                 }}
+
+
                               />
                             </DialogHeader>
 
+                            <Button
+                              onClick={handleCopy}
+                              className="w-full bg-purple-800 text-white hover:bg-purple-600 font-semibold text-sm sm:text-base transition-colors duration-500 ease-in-out"
+
+                            >
+                              <Copy className="w-4 h-4 mr-2" />
+                              {copied ? "¡Copiado!" : t("downloadModal.copy")}
+                            </Button>
+
                             <DialogFooter className="mt-4">
                               <DialogClose asChild>
-                                <Button variant="outline">
+                                <Button variant="outline" className="transition-colors duration-500 ease-in-out">
                                   {t("adminDemoModal.cancel")}
                                 </Button>
                               </DialogClose>
@@ -503,7 +523,7 @@ export default function Projects() {
                                   href={projects[selectedProject].adminDemoUrl}
                                   target="_blank"
                                 >
-                                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                                  <Button className="bg-purple-800 hover:bg-purple-600 text-white transition-colors duration-500 ease-in-out">
                                     {t("adminDemoModal.confirm")}
                                   </Button>
                                 </Link>
