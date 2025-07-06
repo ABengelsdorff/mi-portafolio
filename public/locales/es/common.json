@@ -61,7 +61,8 @@
     "title": "Información importante",
     "description": "Para comenzar a usar la aplicación, iniciá sesión con el usuario <0>admin</0> y la contraseña <1>admin123</1>. Se recomienda cambiar estas credenciales desde el panel de administración una vez instalada la aplicación.",
     "cancel": "Cancelar",
-    "confirm": "Descargar ahora"
+    "confirm": "Descargar ahora",
+    "copy": "Copiar credenciales"
   },
   "adminDemoModal": {
     "title": "Información importante",
