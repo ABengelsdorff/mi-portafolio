@@ -110,6 +110,32 @@ export default function Projects() {
       featured: false,
     },
 
+    {
+      title: t("projectData.formGallery.title"),
+      description: t("projectData.formGallery.description"),
+      images: [
+        "/assets/formGallery/formGallery1.png",
+        "/assets/formGallery/formGallery2.png",
+        "/assets/formGallery/formGallery3.png",
+        "/assets/formGallery/formGallery4.png",
+        "/assets/formGallery/formGallery5.png",
+        "/assets/formGallery/formGallery6.png",
+      ],
+      tags: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "framer-motion",
+        "Lucide React",
+        "sonner",
+        "Radix UI",
+        "ShadCN UI"
+      ],
+      demoUrl: "https://formgallery.vercel.app/",
+      githubUrl: "https://github.com/ABengelsdorff/formGallery",
+      tall: true,
+    },
 
     {
       title: t("projectData.vets.title"),
@@ -229,6 +255,7 @@ export default function Projects() {
     //   githubUrl: "https://github.com/ABengelsdorff/Ecommerce",
     //   featured: false,
     // },
+    
   ];
 
   const [selectedProject, setSelectedProject] = useState<number | null>(null);

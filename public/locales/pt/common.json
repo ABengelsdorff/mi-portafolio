@@ -55,6 +55,10 @@
     "legajoRh": {
       "title": "Gestão de Prontuários RH",
       "description": "Gestão de Prontuários RH é um aplicativo de desktop offline desenvolvido com Electron e tecnologias web, projetado para digitalizar a gestão do prontuário de funcionários de forma segura e eficiente. Permite registrar, buscar e editar informações detalhadas de cada colaborador (dados pessoais, grupo familiar, licenças, etc.), gerenciar usuários por funções, aplicar filtros avançados e exportar dados em Excel ou PDF. Integra um banco de dados local, formulários validados, gráficos estatísticos e uma interface moderna adaptada a ambientes de trabalho reais."
+    },
+    "formGallery": {
+      "title": "Form Gallery",
+      "description": "Uma coleção de formulários de login e registro, modernos, responsivos e pensados para a reutilização. 📌 Cada formulário está projetado de forma modular e desacoplada, permitindo adaptá-los facilmente a diferentes estilos e necessidades de projeto. 📌 A proposta busca agilizar o desenvolvimento de interfaces, fomentar a reutilização de código e servir como fonte de inspiração visual para novos designs."
     }
   },
   "downloadModal": {
