@@ -55,6 +55,10 @@
     "legajoRh": {
       "title": "Gestión de Legajos RH",
       "description": "Gestión de Legajos RH es una aplicación de escritorio offline desarrollada con Electron y tecnologías web, diseñada para digitalizar la gestión del legajo del personal de forma segura y eficiente. Permite registrar, buscar y editar información detallada de cada empleado (datos personales, grupo familiar, licencias, etc.), gestionar usuarios por roles, aplicar filtros avanzados y exportar datos en Excel o PDF. Integra una base de datos local, formularios validados, gráficos estadísticos y una interfaz moderna adaptada a entornos laborales reales."
+    },
+    "formGallery": {
+      "title": "Form Gallery",
+      "description": "Una colección de formularios de login y registro, modernos, responsivos y pensados para la reutilización. 📌 Cada formulario está diseñado de forma modular y desacoplada, permitiendo adaptarlos fácilmente a distintos estilos y necesidades de proyecto. 📌 La propuesta busca agilizar el desarrollo de interfaces, fomentar la reutilización de código y servir como fuente de inspiración visual para nuevos diseños."
     }
   },
   "downloadModal": {
