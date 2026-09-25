@@ -46,6 +46,10 @@
       "title": "Rediseño Goodreads",
       "description": "Rediseño UX/UI mobile de Goodreads realizado en equipo, enfocado en modernizar el descubrimiento de libros, el seguimiento de lecturas y la comunidad. Incluye investigación, arquitectura de información, wireframes y un prototipo interactivo en Figma, con una identidad más limpia pensada para lectores."
     },
+    "roomPreview": {
+      "title": "RoomPreview",
+      "description": "Diseño UX/UI mobile de RoomPreview, una app de decoración de interiores realizada en equipo. Permite explorar estilos, visualizar ambientes y planificar espacios de forma simple e inspiradora. Incluye investigación, flujos de usuario, wireframes y un prototipo interactivo en Figma, con una identidad visual limpia y cálida."
+    },
     "vets": {
       "title": "Vets For Pets",
       "description": "Vets For Pets es una plataforma web integral 🐾 que conecta a dueños de mascotas con veterinarias cercanas mediante geolocalización. Permite a los usuarios buscar clínicas en su zona, chatear en tiempo real con veterinarios, llevar un registro detallado de la información de sus mascotas y solicitar asistencia de emergencia en caso de urgencias. Diseñada con foco en la experiencia del usuario, ofrece una solución moderna y accesible para facilitar el cuidado y bienestar animal."

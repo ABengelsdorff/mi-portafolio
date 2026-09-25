@@ -168,6 +168,35 @@ export default function Projects() {
     },
 
     {
+      title: t("projectData.roomPreview.title"),
+      description: t("projectData.roomPreview.description"),
+      images: [
+        "/roomPreview/1111.jpeg",
+        "/roomPreview/222.jpeg",
+        "/roomPreview/333.jpeg",
+        "/roomPreview/444.jpeg",
+        "/roomPreview/555.jpeg",
+      ],
+      tags: [
+        "Figma",
+        "UX Research",
+        "UI Design",
+        "Wireframing",
+        "Prototipado",
+        "Design Thinking",
+        "User Flows",
+        "Arquitectura de información",
+      ],
+      caseStudyUrl:
+        "https://www.figma.com/proto/Gx24b8ojLVAmpPyQrABF6S/Decoraci%C3%B3n-de-interiores?node-id=2138-55095&t=YFXfA5i5zdeT0suW-1&scaling=scale-down&content-scaling=fixed&page-id=2084%3A43507",
+      prototypeUrl:
+        "https://www.figma.com/proto/Gx24b8ojLVAmpPyQrABF6S/Decoraci%C3%B3n-de-interiores?node-id=2138-39520&t=rdPGsoaaGkHcGoJE-1&scaling=scale-down&content-scaling=fixed&page-id=2023%3A9627&starting-point-node-id=2138%3A39923",
+      demoUrl: "",
+      githubUrl: "",
+      featured: false,
+    },
+
+    {
       title: t("projectData.portfolio.title"),
       description: t("projectData.portfolio.description"),
       images: [
