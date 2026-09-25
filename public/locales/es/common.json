@@ -33,12 +33,18 @@
     "adminDemo": "Ver demo Admin",
     "code": "Ver código",
     "presentation": "Ver presentación",
-    "download": "Descargar instalador"
+    "download": "Descargar instalador",
+    "caseStudy": "Ver caso de estudio",
+    "prototype": "Ver prototipo"
   },
   "projectData": {
     "barberShop": {
       "title": "Barber Shop",
       "description": "Barber Shop es una plataforma web ✂️ para barberías modernas. Permite a los clientes reservar turnos online fácilmente y a los administradores gestionar barberos, servicios y horarios desde un panel centralizado. Incluye métricas en tiempo real para analizar el rendimiento del negocio y mejorar la toma de decisiones."
+    },
+    "goodreads": {
+      "title": "Rediseño Goodreads",
+      "description": "Rediseño UX/UI mobile de Goodreads realizado en equipo, enfocado en modernizar el descubrimiento de libros, el seguimiento de lecturas y la comunidad. Incluye investigación, arquitectura de información, wireframes y un prototipo interactivo en Figma, con una identidad más limpia pensada para lectores."
     },
     "vets": {
       "title": "Vets For Pets",

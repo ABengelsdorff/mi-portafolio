@@ -138,38 +138,34 @@ export default function Projects() {
     },
 
     {
-      title: t("projectData.vets.title"),
-      description: t("projectData.vets.description"),
+      title: t("projectData.goodreads.title"),
+      description: t("projectData.goodreads.description"),
       images: [
-        "/vetsForPets/Home_1.jpg",
-        "/vetsForPets/perfil.png",
-        "/vetsForPets/turnos.png",
-        "/vetsForPets/mascotas.png",
-        "/vetsForPets/Veterinarias.png",
-        "/vetsForPets/emergencias.png",
-        "/vetsForPets/quienesSomos.png",
-        "/vetsForPets/notFound.png",
+        "/goodreads/1.jpeg",
+        "/goodreads/2.jpeg",
+        "/goodreads/3.jpeg",
+        "/goodreads/4.jpeg",
+        "/goodreads/5.jpeg",
+        "/goodreads/6.jpeg",
       ],
       tags: [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "TypeScript",
-        "Leaflet",
-        "Geolocation API",
-        "Nominatim",
-        "Cloudinary",
-        "Socket.IO",
-        "NestJS",
-        "PostgreSQL",
-        "TypeORM",
-        "JWT",
+        "Figma",
+        "UX Research",
+        "UI Design",
+        "Wireframing",
+        "Prototipado",
+        "Design Thinking",
+        "User Flows",
+        "Arquitectura de información",
       ],
-      demoUrl: "https://front-pf-vets-for-pets-main.vercel.app/",
-      githubUrl: "https://github.com/ABengelsdorff/vets-for-pets",
+      caseStudyUrl:
+        "https://www.figma.com/proto/YNB8ug8QpZW5C1kQITt13z/Goodreads?node-id=1030-37&t=USGu6piUVx2aUkEQ-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
+      prototypeUrl:
+        "https://www.figma.com/proto/YNB8ug8QpZW5C1kQITt13z/Goodreads?node-id=1045-9084&p=f&t=rQaTf2CT7bOd6h5A-1&scaling=scale-down&content-scaling=fixed&page-id=1030%3A5860&starting-point-node-id=1045%3A9081&show-proto-sidebar=1",
+      demoUrl: "",
+      githubUrl: "",
       featured: false,
     },
-
 
     {
       title: t("projectData.portfolio.title"),
@@ -565,6 +561,34 @@ export default function Projects() {
                     {projects[selectedProject].title !== t("projectData.barberShop.title") &&
                       projects[selectedProject].title !== t("projectData.legajoRh.title") && (
                         <>
+                          {"caseStudyUrl" in projects[selectedProject] &&
+                            projects[selectedProject].caseStudyUrl && (
+                              <Button asChild>
+                                <Link
+                                  href={projects[selectedProject].caseStudyUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <ExternalLink className="h-4 w-4 mr-2" />
+                                  {t("projects.caseStudy")}
+                                </Link>
+                              </Button>
+                            )}
+
+                          {"prototypeUrl" in projects[selectedProject] &&
+                            projects[selectedProject].prototypeUrl && (
+                              <Button asChild variant="outline">
+                                <Link
+                                  href={projects[selectedProject].prototypeUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <ExternalLink className="h-4 w-4 mr-2" />
+                                  {t("projects.prototype")}
+                                </Link>
+                              </Button>
+                            )}
+
                           {projects[selectedProject].demoUrl && (
                             <Button asChild>
                               <Link
