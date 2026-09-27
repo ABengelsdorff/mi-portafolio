@@ -6,8 +6,6 @@ import { MoonIcon, SunIcon, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import GooeyNav from "./GooeyNav";
-import "./GooeyNav.css";
 import { useTranslation } from "react-i18next";
 import i18n from "@/lib/i18n";
 import {
@@ -23,6 +21,7 @@ export default function Nav() {
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,21 +62,24 @@ export default function Nav() {
           Portafolio
         </Link>
 
-        {/* Desktop Navigation con Gooey */}
         <div className="hidden md:flex items-center gap-6">
-          <GooeyNav
-            items={navLinks.map((link) => ({
-              label: link.name,
-              href: link.href,
-            }))}
-            animationTime={600}
-            particleCount={15}
-            minDistance={20}
-            maxDistance={42}
-            maxRotate={75}
-            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-            timeVariance={300}
-          />
+          <nav className="flex items-center gap-3" aria-label="Secciones">
+            {navLinks.map((link, index) => (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={activeIndex === index ? "page" : undefined}
+                onClick={() => setActiveIndex(index)}
+                className={`px-3 py-1.5 text-sm whitespace-nowrap border-b text-gray-700 dark:text-gray-300 transition-transform duration-200 ${
+                  activeIndex === index
+                    ? "border-current -translate-y-1"
+                    : "border-transparent hover:text-primary"
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
           <Button
             variant="ghost"
             size="icon"
@@ -176,12 +178,20 @@ export default function Nav() {
             className="md:hidden bg-white/60 dark:bg-gray-950/60 backdrop-blur-md border-t dark:border-gray-800"
           >
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary py-2 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  aria-current={activeIndex === index ? "page" : undefined}
+                  className={`py-2 w-fit border-b text-gray-700 dark:text-gray-300 transition-colors ${
+                    activeIndex === index
+                      ? "border-current"
+                      : "border-transparent hover:text-primary"
+                  }`}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>

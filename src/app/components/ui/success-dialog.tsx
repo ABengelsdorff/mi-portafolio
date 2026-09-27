@@ -1,8 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -26,94 +24,31 @@ export default function SuccessDialog({
   description,
 }: SuccessDialogProps) {
   const { t } = useTranslation();
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  useEffect(() => {
-    if (open) {
-      setShowConfetti(true);
-      const timer = setTimeout(() => setShowConfetti(false), 6000);
-      return () => clearTimeout(timer);
-    }
-  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md border-none shadow-xl bg-white dark:bg-gray-900 p-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-purple-400/40 opacity-50" />
-
-        <AnimatePresence>
-          {showConfetti && (
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ y: -20, x: Math.random() * 400 - 200, opacity: 1 }}
-                  animate={{ y: 400, opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    duration: 2 + Math.random() * 3,
-                    delay: Math.random() * 0.3,
-                  }}
-                  className="absolute w-3 h-3 rounded-full"
-                  style={{
-                    left: `${50 + (Math.random() * 60 - 30)}%`,
-                    backgroundColor:
-                      i % 3 === 0
-                        ? "rgb(var(--primary))"
-                        : i % 3 === 1
-                        ? "rgb(168, 85, 247)"
-                        : "rgb(236, 72, 153)",
-                    transform: `rotate(${Math.random() * 360}deg)`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
-        </AnimatePresence>
-
-        <div className="relative z-10 p-6">
-          <div className="flex justify-center mb-4">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 10 }}
-            >
-              <div className="rounded-full bg-green-100 dark:bg-green-900/30 p-3">
-                <CheckCircle className="h-10 w-10 text-green-500" />
-              </div>
-            </motion.div>
+      <DialogContent className="sm:max-w-sm border border-border bg-background shadow-lg">
+        <div className="flex flex-col items-center text-center pt-2">
+          <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+            <Check className="h-5 w-5 text-primary" />
           </div>
 
-          <DialogHeader className="pb-4">
-            <DialogTitle className="text-center text-2xl font-bold">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                {title ?? t("contact.successTitle")}
-              </motion.div>
+          <DialogHeader className="space-y-2">
+            <DialogTitle className="text-center text-lg font-medium">
+              {title ?? t("contact.successTitle")}
             </DialogTitle>
-            <DialogDescription className="text-center text-base mt-2">
+            <DialogDescription className="text-center text-sm">
               {description ?? t("contact.successDescription")}
             </DialogDescription>
           </DialogHeader>
 
-          <motion.div
-            className="flex justify-center mt-6"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+          <button
+            type="button"
+            onClick={() => onOpenChange(false)}
+            className="mt-6 px-5 py-2 text-sm rounded-md border border-border text-foreground hover:bg-muted transition-colors"
           >
-            <motion.button
-              onClick={() => onOpenChange(false)}
-              className="px-6 py-3 bg-gradient-to-r from-primary to-purple-500 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {t("contact.successClose")}
-            </motion.button>
-          </motion.div>
+            {t("contact.successClose")}
+          </button>
         </div>
       </DialogContent>
     </Dialog>

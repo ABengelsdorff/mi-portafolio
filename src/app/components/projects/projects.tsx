@@ -352,8 +352,17 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              role="button"
+              tabIndex={0}
+              onClick={() => openProjectModal(index)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openProjectModal(index);
+                }
+              }}
               className={cn(
-                "group overflow-hidden rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-purple-600/30",
+                "group relative cursor-pointer overflow-hidden rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-purple-600/30",
                 project.featured
                   ? "md:col-span-8 md:row-span-2"
                   : "md:col-span-4"
@@ -377,13 +386,15 @@ export default function Projects() {
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="flex gap-3">
                     <Button
+                      asChild
                       size="sm"
                       variant="default"
-                      className=" border-0 mt-28 transform transition-transform duration-300 group-hover:scale-110"
-                      onClick={() => openProjectModal(index)}
+                      className="border-0 mt-28 pointer-events-none transform transition-transform duration-300 group-hover:scale-110"
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      {t("projects.details")}
+                      <span>
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        {t("projects.details")}
+                      </span>
                     </Button>
                   </div>
                 </div>
