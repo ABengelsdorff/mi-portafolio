@@ -32,9 +32,12 @@ export default function AnimatedText({ text, delay = 0.1 }: AnimatedTextProps) {
 
   return (
     <span ref={containerRef} className="inline-block">
+      {/* Texto completo para buscadores y lectores de pantalla */}
+      <span className="sr-only">{text}</span>
       {text.split("").map((char, index) => (
         <motion.span
           key={index}
+          aria-hidden="true"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.3, delay: index * delay }}

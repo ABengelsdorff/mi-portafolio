@@ -354,6 +354,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               role="button"
               tabIndex={0}
+              aria-label={`${project.title}: ${t("projects.details")}`}
               onClick={() => openProjectModal(index)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -383,6 +384,7 @@ export default function Projects() {
               </div>
 
               <div className="relative z-20 h-full flex flex-col justify-end p-6">
+                <h3 className="sr-only">{project.title}</h3>
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="flex gap-3">
                     <Button

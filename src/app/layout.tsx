@@ -16,6 +16,44 @@ const geistMono = Geist_Mono({
 
 const siteUrl = "https://www.bengelsdorff.dev";
 
+const projects = [
+  {
+    name: "Barber Shop",
+    description:
+      "Plataforma web para barberías con reservas de turnos online y panel de administración con métricas.",
+    url: "https://demo.barberturnos.shop/",
+    image: "/barberShop/HeroSeccion.png",
+  },
+  {
+    name: "Gestión de Legajos RH",
+    description:
+      "Aplicación de escritorio offline con Electron para digitalizar la gestión de legajos del personal.",
+    url: "",
+    image: "/legajoRH/buscar.png",
+  },
+  {
+    name: "Form Gallery",
+    description:
+      "Colección de formularios de login y registro modernos, responsivos y reutilizables.",
+    url: "https://formgallery.vercel.app/",
+    image: "/assets/formGallery/formGallery1.png",
+  },
+  {
+    name: "Rediseño Goodreads",
+    description:
+      "Rediseño UX/UI mobile de Goodreads con investigación, wireframes y prototipo en Figma.",
+    url: "",
+    image: "/goodreads/1.jpeg",
+  },
+  {
+    name: "RoomPreview",
+    description:
+      "Diseño UX/UI mobile de una app de decoración de interiores, con prototipo interactivo en Figma.",
+    url: "",
+    image: "/roomPreview/1111.jpeg",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -40,13 +78,27 @@ const jsonLd = {
         "https://www.linkedin.com/in/angelica-bengelsdorff",
       ],
       knowsAbout: [
+        "Desarrollo web Full Stack",
+        "Desarrollo Frontend",
+        "Diseño UX/UI",
         "React",
         "Next.js",
         "TypeScript",
+        "JavaScript",
         "Node.js",
-        "UX/UI",
+        "Express",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker",
+        "Electron",
         "Figma",
       ],
+      knowsLanguage: ["es", "pt"],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Desarrolladora Web Full Stack",
+        occupationLocation: { "@type": "City", name: "Buenos Aires" },
+      },
     },
     {
       "@type": "WebSite",
@@ -65,6 +117,25 @@ const jsonLd = {
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       mainEntity: { "@id": `${siteUrl}/#person` },
+      primaryImageOfPage: `${siteUrl}/vistaMiniatura.png`,
+      hasPart: { "@id": `${siteUrl}/#projects` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}/#projects`,
+      name: "Proyectos de Angelica Bengelsdorff",
+      itemListElement: projects.map((project, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "CreativeWork",
+          name: project.name,
+          description: project.description,
+          ...(project.url && { url: project.url }),
+          image: `${siteUrl}${project.image}`,
+          creator: { "@id": `${siteUrl}/#person` },
+        },
+      })),
     },
   ],
 };
@@ -85,12 +156,26 @@ export const metadata: Metadata = {
     "desarrolladora web Buenos Aires",
     "diseñadora UX UI",
     "portafolio",
+    "desarrolladora frontend Argentina",
+    "desarrolladora React",
+    "desarrolladora Next.js",
+    "programadora Buenos Aires",
     "React",
     "Next.js",
     "TypeScript",
   ],
   authors: [{ name: "Angelica Bengelsdorff", url: siteUrl }],
   creator: "Angelica Bengelsdorff",
+  publisher: "Angelica Bengelsdorff",
+  category: "technology",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/yo.jpg",
+  },
+  // Código de verificación de Google Search Console (variable de entorno en Dokploy)
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
   alternates: {
     canonical: "/",
   },
@@ -114,8 +199,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/vistaMiniatura.png",
-        width: 1200,
-        height: 630,
+        width: 1184,
+        height: 659,
         alt: "Portafolio de Angelica Bengelsdorff",
       },
     ],

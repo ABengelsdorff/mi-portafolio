@@ -53,7 +53,7 @@ export default function Hero() {
             >
               <Image
                 src="/yo.jpg"
-                alt="Tu foto de perfil"
+                alt="Angelica Bengelsdorff, desarrolladora Full Stack"
                 fill
                 className="w-full h-full object-cover"
               />
